@@ -1,0 +1,2348 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+html,
+body
+{
+    margin:0;
+    overflow: hidden;
+    font-family: Helvetica, Arial, Verdana, sans-serif; 
+    background-color: #cccccc;
+}
+
+p {
+	font-family: Verdana;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-size: 0.78rem;
+	background-image: none !important;
+}
+
+canvas
+{
+    float:right;
+    border: 2.5px solid rgba(0, 0, 255, 1.0);
+}
+
+.grid::-webkit-scrollbar { width: 0 !important }
+
+#spotify {
+  background-image: url(assets/images/951657851396bc5c.jpg);
+  background-repeat: no-repeat;
+  background-size: 120%;
+}
+
+#afraid {
+  background-image: url(assets/images/7f92bb19c2a00538.jpg);
+  background-repeat: no-repeat;
+  background-size: 155%;
+  display: grid;
+  padding-bottom: 0%;
+}
+
+.justDisplay_juhica {
+  display: block !important;
+}
+
+.justDisplay_tweet {
+  display: block !important;
+}
+
+.justDisplay_burning {
+  display: block !important;
+}
+
+#instagram {
+  background-image: url(assets/images/43f5170e2c2c61a4.jpg);
+  background-repeat: no-repeat;
+  background-size: 125%;
+}
+
+#grub {
+  background-image: url(d8603d1d4c473164.jpeg);
+  background-repeat: no-repeat;
+  background-size: 110%;
+}
+
+#konjcki {
+  background-image: url(71d355dbd7f86cc6.jpeg);
+  background-repeat: no-repeat;
+  background-size: 110%;
+}
+
+iframe {
+  display:block;
+  width:100%;
+  height:100%;
+}
+
+#davidimo {
+  background-image: url(504e7d111654c7f0.jpeg);
+  background-repeat: no-repeat;
+  background-size: 110%;
+  background-position: 40% 60%;
+}
+
+#silvia {
+  background-image: url(6c3b49372bbe9a91.jpeg);
+  background-repeat: no-repeat;
+  background-size: 110%;
+}
+
+#nazdrovje {
+  background-image: url(e433ff72deda6886.jpeg);
+  background-repeat: no-repeat;
+  background-size: 115%;
+  background-position: 60% 30%;
+}
+
+#juhica {
+  background-image: url(assets/images/e09c1a2db166b52a.jpg);
+  background-repeat: no-repeat;
+  background-size: 110%;
+  background-position: 50% 40%;
+}
+
+#giga, #fanta, #magenta, #washout, #puter{
+  color:rgb(242, 5, 5);
+}
+
+
+#info {
+  background-image: url(assets/images/5ae5e65dd7e64026.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#insta {
+  margin-left:20%;
+  margin-top:10%;
+}
+
+#contacti {
+  margin-left:30%;
+  margin-top:15%;
+}
+
+
+#spotify_bar {
+  margin-left:30%;
+  margin-top:55%;
+}
+
+#arenica {
+  margin-left:25%;
+  background-color: #cccccc00;
+}
+
+
+#teatrospirit {
+  background-image: url(7e45344f204d46b8.jpeg);
+  background-repeat: no-repeat;
+  background-size: 110%;
+}
+
+#infocomplex {
+  background-image: url(d09932b720c671e8.jpeg);
+  background-repeat: no-repeat;
+  background-size: 115%;
+  background-position: 40% 50%;
+}
+
+#travica {
+  background-image: url(assets/images/d2702ee4ba37d841.gif);
+  background-repeat: no-repeat;
+  background-size: 125%;
+}
+
+#burning {
+  background-image: url(dba69c9946c9d3a0.jpeg);
+  background-repeat: no-repeat;
+  background-size: 175%;
+  background-position: center;
+}
+
+#liminalikea {
+  background-image: url(72601cda5f02240f.jpeg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+
+#sketch {
+  height: 100%;
+  width:50%;
+  float:right;
+}
+
+.square {
+  aspect-ratio: 1/1;
+  /* Fallback */
+  display: flex;
+  align-items: center;
+  padding: 0%;
+  color: #FFFFFF;
+}
+
+#liststretch {
+  width: 100%;
+}
+
+a:hover {
+  text-decoration:underline;
+  text-decoration-color: rgb(242, 5, 5);
+}
+
+#washout:hover {
+  text-decoration:underline;
+  text-decoration-color: blue;
+}
+
+li:hover {
+  background-color: #FFFFFF;
+  color: rgb(242, 5, 5);
+}
+
+.redbackground {
+  background-color: rgb(242, 5, 5);;
+}
+
+.green {
+  border: 5.5px solid /*#8D8D8D*/ rgb(99, 211, 1);
+}
+
+.creamback {
+  background-color: #F9F9F9;
+}
+
+.red {
+  border: 5.5px solid /*#8D8D8D*/ rgb(242, 5, 5);
+}
+
+.blue {
+  border: 5.5px solid /*#8D8D8D*/ blue;
+
+}
+
+.square img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+#pfp {
+  background-image: url(assets/images/6c5f7c90f8043169.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.square.fullImg {
+  padding: 0%;
+}
+
+.square.fullImg img {
+  object-fit: cover;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0)
+  and (min-resolution:.001dpcm) {
+
+    .njam {
+      
+    }
+    html,
+    body
+    {
+        margin:0;
+        overflow: hidden;
+        font-family: Helvetica, Arial, Verdana, sans-serif; 
+        background-color: #cccccc;
+    }
+
+    p {
+    	font-family: Verdana;
+      display: block;
+      margin-block-start: 1em;
+      margin-block-end: 1em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      font-size: 0.78rem;
+    	background-image: none !important;
+    }
+
+    canvas
+    {
+        float:right;
+        border: 2.5px solid rgba(0, 0, 255, 1.0);
+    }
+
+    .grid::-webkit-scrollbar { width: 0 !important }
+
+    #spotify {
+      background-image: url(assets/images/951657851396bc5c.jpg);
+      background-repeat: no-repeat;
+      background-size: 120%;
+    }
+
+    #afraid {
+      background-image: url(assets/images/7f92bb19c2a00538.jpg);
+      background-repeat: no-repeat;
+      background-size: 155%;
+      display: grid;
+      padding-bottom: 0%;
+    }
+
+    .justDisplay_juhica {
+      display: block !important;
+    }
+
+    .justDisplay_tweet {
+      display: block !important;
+    }
+
+    .justDisplay_burning {
+      display: block !important;
+    }
+
+    #instagram {
+      background-image: url(assets/images/43f5170e2c2c61a4.jpg);
+      background-repeat: no-repeat;
+      background-size: 125%;
+    }
+
+    #grub {
+      background-image: url(d8603d1d4c473164.jpeg);
+      background-repeat: no-repeat;
+      background-size: 110%;
+    }
+
+    #konjcki {
+      background-image: url(71d355dbd7f86cc6.jpeg);
+      background-repeat: no-repeat;
+      background-size: 110%;
+    }
+
+    #davidimo {
+      background-image: url(504e7d111654c7f0.jpeg);
+      background-repeat: no-repeat;
+      background-size: 110%;
+      background-position: 40% 60%;
+    }
+
+    #silvia {
+      background-image: url(6c3b49372bbe9a91.jpeg);
+      background-repeat: no-repeat;
+      background-size: 110%;
+    }
+
+    #nazdrovje {
+      background-image: url(e433ff72deda6886.jpeg);
+      background-repeat: no-repeat;
+      background-size: 115%;
+      background-position: 60% 30%;
+    }
+
+    #juhica {
+      background-image: url(assets/images/e09c1a2db166b52a.jpg);
+      background-repeat: no-repeat;
+      background-size: 110%;
+      background-position: 50% 40%;
+    }
+
+    #giga, #fanta, #magenta{
+      color:rgb(242, 5, 5);
+    }
+
+
+    #info {
+      background-image: url(assets/images/5ae5e65dd7e64026.jpg);
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+
+    #insta {
+      margin-left:20%;
+      margin-top:10%;
+    }
+
+    #contacti {
+      margin-left:30%;
+      margin-top:15%;
+    }
+
+
+    #spotify_bar {
+      margin-left:30%;
+      margin-top:55%;
+    }
+
+    #arenica {
+      margin-left:25%;
+      background-color: #cccccc00;
+    }
+
+
+    #teatrospirit {
+      background-image: url(7e45344f204d46b8.jpeg);
+      background-repeat: no-repeat;
+      background-size: 110%;
+    }
+
+    #infocomplex {
+      background-image: url(d09932b720c671e8.jpeg);
+      background-repeat: no-repeat;
+      background-size: 115%;
+      background-position: 40% 50%;
+    }
+
+    #travica {
+      background-image: url(assets/images/d2702ee4ba37d841.gif);
+      background-repeat: no-repeat;
+      background-size: 125%;
+    }
+
+    #burning {
+      background-image: url(dba69c9946c9d3a0.jpeg);
+      background-repeat: no-repeat;
+      background-size: 175%;
+      background-position: center;
+    }
+
+    #liminalikea {
+      background-image: url(72601cda5f02240f.jpeg);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
+    }
+
+    #sketch {
+      height: 100%;
+      width:50%;
+      float:right;
+    }
+
+    .square {
+      aspect-ratio: 1/1;
+      /* Fallback */
+      display: flex;
+      align-items: center;
+      padding: 0%;
+      color: #FFFFFF;
+    }
+
+    #liststretch {
+      width: 100%;
+    }
+
+    a:hover {
+      text-decoration:underline;
+      text-decoration-color: rgb(242, 5, 5);
+    }
+
+    li:hover {
+      background-color: #FFFFFF;
+      color: rgb(242, 5, 5);
+    }
+
+    .redbackground {
+      background-color: rgb(242, 5, 5);;
+    }
+
+    .green {
+      border: 5.5px solid /*#8D8D8D*/ rgb(99, 211, 1);
+    }
+
+    .creamback {
+      background-color: #F9F9F9;
+    }
+
+    .red {
+      border: 5.5px solid /*#8D8D8D*/ rgb(242, 5, 5);
+    }
+
+    .blue {
+      border: 5.5px solid /*#8D8D8D*/ blue;
+    
+    }
+
+    .square img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    #pfp {
+      background-image: url(assets/images/6c5f7c90f8043169.jpg);
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+
+    .square.fullImg {
+      padding: 0%;
+    }
+
+    .square.fullImg img {
+      object-fit: cover;
+    }
+
+    a {
+    	text-decoration: none;
+    	color: black;
+    }
+    
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 380px) and (max-width: 395px) {  
+
+    /* MOBILE TEST */
+    .grid {
+      display: grid;
+      height: 100%;
+      width:49.7%;
+      float:left;
+      grid-template-columns: repeat(4, 0.3fr);
+      gap: 5.0%;
+      overflow-y: scroll;
+      border: #1E1E1E;
+      /* MOBILE TEST
+      position:relative;
+      */
+    }
+
+    #actualname {
+      margin-left:20%;
+      margin-top:-15%;
+    }
+
+    canvas
+    {
+      border: 0px solid rgba(0, 0, 255, 1.0);
+    }
+
+    #sketch {
+      position: absolute;
+      height: 100%;
+      width:99.5%;
+      top: 0;
+      left: 0.7%;
+      z-index: -100;
+      float:left;
+    }
+
+    #afro1 {
+      text-align: center;
+      margin-top: 0%;
+      margin-left: 5%;
+      width:90%;
+      display: inline-block;
+      font-size: 1.15vh;
+    }
+
+    .grid {
+      display: grid;
+      height: 100%;
+      width:100%;
+      float:left;
+      grid-template-columns: repeat(4, 0.3fr);
+      gap: 0.0%;
+      overflow-y: scroll;
+      border: #1E1E1E;
+      /* MOBILE TEST
+      position:relative;
+      */
+    }
+
+    .square.texttoo {
+      padding-bottom: 0.0%;
+    }
+
+    .square { 
+      width:22.3;
+      height:25.7vw;
+      position: relative;
+      font-size: x-small;
+    }
+
+    .arenaHighlight {
+      -webkit-text-size-adjust: 100%;
+      font-size: 1.8vw;
+      height: 100.2%;
+    }
+    
+    .arenaTitle {
+      font-size: x-small;
+      margin: auto;
+      text-align: center;
+      width:100%
+    }
+
+    .channelList {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width:100%
+    }
+
+    .channelLink {
+      border: 1px solid #000;
+      margin: auto auto 0.5vh;
+      padding: 0.15vh 0.3vw;
+      text-decoration: none;
+      width:90%
+    }
+    
+    .channelLink:hover {
+      background-color: rgb(242, 5, 5);
+      color:#ff0;
+      border: 1px solid rgb(242, 5, 5);
+    }
+
+    .namename {
+      background-color: #FFFFFF;
+      color: rgb(242, 5, 5);
+      font-size: x-small;
+    }
+
+    #afro2 {
+      text-align: center;
+      margin-top: 50%;
+      margin-left: 5%;
+      width: 90%;
+      display: inline-block;
+    }
+
+    #tweetext {
+      z-index: 100;
+      font-size: 7px;
+      text-align: justify;
+      padding-left: 5%;
+      padding-right: 5%;
+      color: rgb(242, 5, 5);
+      background-color: #FFFFFF;
+      display: none;
+      margin-top: 45%;
+    }
+
+    #juhicatekst {
+      z-index: 100;
+      font-size: 0.5vh;
+      text-align: justify;
+      padding-left: 5%;
+      padding-right: 5%;
+      color: rgb(242, 5, 5);
+      background-color: #FFFFFF;
+      display: none;
+    }
+
+    #juhicatekst_mob {
+      z-index: 130;
+      font-size: 1.5vh;
+      text-align: justify;
+      padding-left: 5%;
+      padding-right: 5%;
+      color: rgb(242, 5, 5);
+      background-color: #FFFFFF;
+      display:none;
+    }
+
+    #tweetext_mob {
+      z-index: 130;
+      font-size: 1.5vh;
+      text-align: justify;
+      padding-left: 5%;
+      padding-right: 5%;
+      color: rgb(242, 5, 5);
+      background-color: #FFFFFF;
+      display:none;
+    }
+
+    #burningcities_mob {
+      z-index: 100;
+      font-size: 1.5vh;
+      text-align: justify;
+      padding-left: 5%;
+      padding-right: 5%;
+      color: rgb(242, 5, 5);
+      background-color: #FFFFFF;
+      display: none;
+    }
+
+    #spiritteatro_mob {
+      z-index: 100;
+      font-size: 1.5vh;
+      text-align: justify;
+      padding-left: 5%;
+      padding-right: 5%;
+      color: rgb(242, 5, 5);
+      background-color: #FFFFFF;
+      display: none;
+    }
+
+    #spiritteatro_mob1 {
+      z-index: 100;
+      font-size: 1.5vh;
+      text-align: justify;
+      padding-left: 5%;
+      padding-right: 5%;
+      color: rgb(242, 5, 5);
+      background-color: #FFFFFF;
+      display: none;
+    }
+
+    #spiritteatro_mob2 {
+      z-index: 100;
+      font-size: 1.5vh;
+      text-align: justify;
+      padding-left: 5%;
+      padding-right: 5%;
+      color: rgb(242, 5, 5);
+      background-color: #FFFFFF;
+      display: none;
+    }
+
+    #spiritteatro_mob3 {
+      z-index: 100;
+      font-size: 1.5vh;
+      text-align: justify;
+      padding-left: 5%;
+      padding-right: 5%;
+      color: rgb(242, 5, 5);
+      background-color: #FFFFFF;
+      display: none;
+    }
+
+    #spiritteatro_mob4 {
+      z-index: 100;
+      font-size: 1.5vh;
+      text-align: justify;
+      padding-left: 5%;
+      padding-right: 5%;
+      color: rgb(242, 5, 5);
+      background-color: #FFFFFF;
+      display: none;
+    }
+
+    #spiritteatro_mob5 {
+      z-index: 100;
+      font-size: 1.5vh;
+      text-align: justify;
+      padding-left: 5%;
+      padding-right: 5%;
+      color: rgb(242, 5, 5);
+      background-color: #FFFFFF;
+      display: none;
+    }
+
+    #spiritteatro_mob6 {
+      z-index: 100;
+      font-size: 1.5vh;
+      text-align: justify;
+      padding-left: 5%;
+      padding-right: 5%;
+      color: rgb(242, 5, 5);
+      background-color: #FFFFFF;
+      display: none;
+    }
+
+    #spiritteatro_mob7 {
+      z-index: 100;
+      font-size: 1.5vh;
+      text-align: justify;
+      padding-left: 5%;
+      padding-right: 5%;
+      color: rgb(242, 5, 5);
+      background-color: #FFFFFF;
+      display: none;
+    }
+    
+    #burningcities {
+      z-index: 100;
+      font-size: 0.45vh;
+      text-align: justify;
+      padding-left: 5%;
+      padding-right: 5%;
+      color: rgb(242, 5, 5);
+      background-color: #FFFFFF;
+      display: none;
+    }
+
+    /* #nazdrovje:hover #tweetext {
+      display:block;
+    } */
+
+    .hekatelink{
+      font-size:'5pt';
+    }
+
+    .results {
+      background-color: #fff;
+      color: #000;
+      display: block;
+      padding: 0px;
+      border: 0px solid;
+      margin: auto;
+      font-family: 'times';
+      font-size: 7px;
+    }
+
+    #hekateimg {
+      width:75%;
+      height:80%;
+      max-width: 160px;
+      border: 0px solid;
+      padding-left: 12%;
+    }
+
+    #spiritteatro {
+      z-index: 100;
+      font-size: 0.6vh;
+      text-align: justify;
+      padding-left: 5%;
+      padding-right: 5%;
+      color: rgb(242, 5, 5);
+      background-color: #FFFFFF;
+      display: none;
+    }
+
+    #magenta:hover, #magenta:active{
+      background-color: magenta;
+      color:#ff0;
+    }
+    
+    #giga:hover, #giga:active {
+      background-color: rgba(0, 0, 255, 1.0);
+      color:#ff0;
+    }
+
+    #puter:hover, #puter:active {
+      background-color: rgb(242, 5, 5);
+      color:rgb(242, 5, 5);
+    }
+
+    #washout:hover, #washout:active {
+      background-color: blue;
+      color:blue;
+      
+    }
+    
+    #fanta:hover, #fanta:active {
+      background-color: rgb(99, 211, 1);
+      color:#ff0;
+    }
+    
+    /* #teatrospirit:hover, #teatrospirit:active #spiritteatro{
+      display: block;
+    }
+    
+    #infocomplex:hover, #infocomplex:active #spiritteatro{
+      display: block;
+    }
+    
+    #travica:hover, #travica:active #spiritteatro{
+      display: block;
+    }
+    
+    #burning:hover, #burning:active #burningcities{
+      display: block;
+    }
+    
+    #juhica:hover, #juhica:active #juhicatekst {
+      display:block;
+    }
+
+    #juhica:hover, #juhica:active #juhicatekst_mob {
+      display:block;
+    }
+    
+    #grub:hover, #grub:active #spiritteatro {
+      display:block;
+    }
+    
+    #liminalikea:hover, #liminalikea:active #spiritteatro{
+      display:block;
+    }
+    
+    #silvia:hover, #silvia:active #spiritteatro{
+      display:block;
+    } */
+
+}
+
+@media only screen and (min-width: 395px) and (max-width: 420px) {  
+
+  /* MOBILE TEST */
+  .grid {
+    display: grid;
+    height: 100%;
+    width:49.7%;
+    float:left;
+    grid-template-columns: repeat(4, 0.3fr);
+    gap: 5.0%;
+    overflow-y: scroll;
+    border: #1E1E1E;
+    /* MOBILE TEST
+    position:relative;
+    */
+  }
+
+  #actualname {
+    margin-left:20%;
+    margin-top:-15%;
+  }
+
+  canvas
+  {
+    border: 0px solid rgba(0, 0, 255, 1.0);
+  }
+
+  #sketch {
+    position: absolute;
+    height: 100%;
+    width:99.5%;
+    top: 0;
+    left: 0.7%;
+    z-index: -100;
+    float:left;
+  }
+
+  #afro1 {
+    text-align: center;
+    margin-top: 0%;
+    margin-left: 5%;
+    width:90%;
+    display: inline-block;
+    font-size: 1.15vh;
+  }
+
+  .grid {
+    display: grid;
+    height: 100%;
+    width:100%;
+    float:left;
+    grid-template-columns: repeat(4, 0.3fr);
+    gap: 0.0%;
+    overflow-y: scroll;
+    border: #1E1E1E;
+    /* MOBILE TEST
+    position:relative;
+    */
+  }
+
+  .square.texttoo {
+    padding-bottom: 0.0%;
+  }
+
+  .square { 
+    width:22.3;
+    height:25.7vw;
+    position: relative;
+    font-size: x-small;
+  }
+
+  .arenaHighlight {
+    -webkit-text-size-adjust: 100%;
+    font-size: 1.8vw;
+    height: 100.2%;
+  }
+  
+  .arenaTitle {
+    font-size: x-small;
+    margin: auto;
+    text-align: center;
+    width:100%
+  }
+
+  .channelList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width:100%
+  }
+
+  .channelLink {
+    border: 1px solid #000;
+    margin: auto auto 0.5vh;
+    padding: 0.15vh 0.3vw;
+    text-decoration: none;
+    width:90%
+  }
+  
+  .channelLink:hover {
+    background-color: rgb(242, 5, 5);
+    color:#ff0;
+    border: 1px solid rgb(242, 5, 5);
+  }
+
+  .namename {
+    background-color: #FFFFFF;
+    color: rgb(242, 5, 5);
+    font-size: x-small;
+  }
+
+  #afro2 {
+    text-align: center;
+    margin-top: 50%;
+    margin-left: 5%;
+    width: 90%;
+    display: inline-block;
+  }
+
+  #tweetext {
+    z-index: 100;
+    font-size: 7px;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+    margin-top: 45%;
+  }
+
+  #spotify {
+    top:-8vw;
+  }
+
+  #juhica {
+    top:8vw;
+  }
+
+  #tenents {
+    top:8vw;
+  }
+
+  #arena {
+    top:-8vw;
+  }
+
+  #mojkojn {
+    top:-16vw;
+  }
+
+  #burning {
+    top:-8vw;
+  }
+
+  #instagram {
+    top:8vw;
+  }
+
+  #travica {
+    top:-8vw;
+  }
+
+  #world {
+    top:8vw;
+  }
+
+  #flower {
+    top:8vw;
+  }
+
+  #teatrospirit {
+    top:-8vw;
+  }
+
+  #infocomplex {
+    top:8vw;
+  }
+
+  #golobica {
+    top:-8vw;
+  }
+
+  #hekate {
+    top:8vw;
+  }
+
+  #silvia {
+    top:-8vw;
+  }
+  #juhicatekst {
+    z-index: 100;
+    font-size: 0.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+
+  #juhicatekst_mob {
+    z-index: 130;
+    font-size: 1.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display:none;
+  }
+
+  #tweetext_mob {
+    z-index: 130;
+    font-size: 1.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display:none;
+  }
+
+  #burningcities_mob {
+    z-index: 100;
+    font-size: 1.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+
+  #spiritteatro_mob {
+    z-index: 100;
+    font-size: 1.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+
+  #spiritteatro_mob1 {
+    z-index: 100;
+    font-size: 1.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+
+  #spiritteatro_mob2 {
+    z-index: 100;
+    font-size: 1.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+
+  #spiritteatro_mob3 {
+    z-index: 100;
+    font-size: 1.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+
+  #spiritteatro_mob4 {
+    z-index: 100;
+    font-size: 1.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+
+  #spiritteatro_mob5 {
+    z-index: 100;
+    font-size: 1.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+
+  #spiritteatro_mob6 {
+    z-index: 100;
+    font-size: 1.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+
+  #spiritteatro_mob7 {
+    z-index: 100;
+    font-size: 1.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+  
+  #burningcities {
+    z-index: 100;
+    font-size: 0.45vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+
+  /* #nazdrovje:hover #tweetext {
+    display:block;
+  } */
+
+  .hekatelink{
+    font-size:'5pt';
+  }
+
+  .results {
+    background-color: #fff;
+    color: #000;
+    display: block;
+    padding: 0px;
+    border: 0px solid;
+    margin: auto;
+    font-family: 'times';
+    font-size: 7px;
+  }
+
+  #hekateimg {
+    width:95%;
+    height:80%;
+    max-width: 160px;
+    border: 0px solid;
+    padding-left: 3%;
+  }
+
+  #spiritteatro {
+    z-index: 100;
+    font-size: 0.6vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+
+  #magenta:hover, #magenta:active{
+    background-color: magenta;
+    color:#ff0;
+  }
+  
+  #giga:hover, #giga:active {
+    background-color: rgba(0, 0, 255, 1.0);
+    color:#ff0;
+  }
+
+  #puter:hover, #puter:active {
+    background-color: rgb(242, 5, 5);
+    color:rgb(242, 5, 5);
+  }
+
+  #washout:hover, #washout:active {
+    background-color: blue;
+    color:blue;
+  }
+  
+  #fanta:hover, #fanta:active {
+    background-color: rgb(99, 211, 1);
+    color:#ff0;
+  }
+  
+  /* #teatrospirit:hover, #teatrospirit:active #spiritteatro{
+    display: block;
+  }
+  
+  #infocomplex:hover, #infocomplex:active #spiritteatro{
+    display: block;
+  }
+  
+  #travica:hover, #travica:active #spiritteatro{
+    display: block;
+  }
+  
+  #burning:hover, #burning:active #burningcities{
+    display: block;
+  }
+  
+  #juhica:hover, #juhica:active #juhicatekst {
+    display:block;
+  }
+
+  #juhica:hover, #juhica:active #juhicatekst_mob {
+    display:block;
+  }
+  
+  #grub:hover, #grub:active #spiritteatro {
+    display:block;
+  }
+  
+  #liminalikea:hover, #liminalikea:active #spiritteatro{
+    display:block;
+  }
+  
+  #silvia:hover, #silvia:active #spiritteatro{
+    display:block;
+  } */
+
+}
+
+@media only screen and (min-width: 300px) and (max-width: 330px) {  
+
+  /* MOBILE TEST */
+  .grid {
+    display: grid;
+    height: 100%;
+    width:49.7%;
+    float:left;
+    grid-template-columns: repeat(4, 0.3fr);
+    gap: 5.0%;
+    overflow-y: scroll;
+    border: #1E1E1E;
+    /* MOBILE TEST
+    position:relative;
+    */
+  }
+
+  canvas
+  {
+    border: 0px solid rgba(0, 0, 255, 1.0);
+  }
+
+  #actualname {
+    margin-left:15%;
+    margin-top:-15%;
+    font-size:1.7vh;
+  }
+
+  #sketch {
+    position: absolute;
+    height: 100%;
+    width:99.5%;
+    top: 0;
+    left: 0.7%;
+    z-index: -100;
+    float:left;
+  }
+
+  #afro1 {
+    text-align: center;
+    margin-top: 0%;
+    margin-left: 5%;
+    width:90%;
+    display: inline-block;
+    font-size: 1.15vh;
+  }
+
+  .grid {
+    display: grid;
+    height: 100%;
+    width:100%;
+    float:left;
+    grid-template-columns: repeat(4, 0.3fr);
+    gap: 0.0%;
+    overflow-y: scroll;
+    border: #1E1E1E;
+    /* MOBILE TEST
+    position:relative;
+    */
+  }
+
+  .square.texttoo {
+    padding-bottom: 0.0%;
+  }
+
+  .square { 
+    width:22.3;
+    height:26.2vw;
+    position: relative;
+    font-size: x-small;
+  }
+
+  .arenaHighlight {
+    -webkit-text-size-adjust: 100%;
+    font-size: 1.8vw;
+    height: 100.2%;
+  }
+  
+  .arenaTitle {
+    font-size: x-small;
+    margin: auto;
+    text-align: center;
+    width:100%
+  }
+
+  .channelList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width:100%
+  }
+
+  .channelLink {
+    border: 1px solid #000;
+    margin: auto auto 0.5vh;
+    padding: 0.15vh 0.3vw;
+    text-decoration: none;
+    width:90%
+  }
+  
+  .channelLink:hover {
+    background-color: rgb(242, 5, 5);
+    color:#ff0;
+    border: 1px solid rgb(242, 5, 5);
+  }
+
+  .namename {
+    background-color: #FFFFFF;
+    color: rgb(242, 5, 5);
+    font-size: x-small;
+  }
+
+  #afro2 {
+    text-align: center;
+    margin-top: 50%;
+    margin-left: 5%;
+    width: 90%;
+    display: inline-block;
+  }
+
+  #tweetext {
+    z-index: 100;
+    font-size: 7px;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+    margin-top: 45%;
+  }
+
+  #juhicatekst {
+    z-index: 100;
+    font-size: 0.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+
+  #juhicatekst_mob {
+    z-index: 130;
+    font-size: 1.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display:none;
+  }
+
+  #tweetext_mob {
+    z-index: 130;
+    font-size: 1.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display:none;
+  }
+
+  #burningcities_mob {
+    z-index: 100;
+    font-size: 1.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+
+  #spiritteatro_mob {
+    z-index: 100;
+    font-size: 1.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+
+  #spiritteatro_mob1 {
+    z-index: 100;
+    font-size: 1.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+
+  #spiritteatro_mob2 {
+    z-index: 100;
+    font-size: 1.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+
+  #spiritteatro_mob3 {
+    z-index: 100;
+    font-size: 1.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+
+  #spiritteatro_mob4 {
+    z-index: 100;
+    font-size: 1.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+
+  #spiritteatro_mob5 {
+    z-index: 100;
+    font-size: 1.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+
+  #spiritteatro_mob6 {
+    z-index: 100;
+    font-size: 1.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+
+  #spiritteatro_mob7 {
+    z-index: 100;
+    font-size: 1.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+  
+  #burningcities {
+    z-index: 100;
+    font-size: 0.45vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+
+  /* #nazdrovje:hover #tweetext {
+    display:block;
+  } */
+
+  .hekatelink{
+    font-size:'5pt';
+  }
+
+  .results {
+    background-color: #fff;
+    color: #000;
+    display: block;
+    padding: 0px;
+    border: 0px solid;
+    margin: auto;
+    font-family: 'times';
+    font-size: 7px;
+  }
+
+  #hekateimg {
+    width:75%;
+    height:80%;
+    max-width: 160px;
+    border: 0px solid;
+    padding-left: 12%;
+  }
+
+  #spiritteatro {
+    z-index: 100;
+    font-size: 0.6vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+
+  #magenta:hover, #magenta:active{
+    background-color: magenta;
+    color:#ff0;
+  }
+  
+  #giga:hover, #giga:active {
+    background-color: rgba(0, 0, 255, 1.0);
+    color:#ff0;
+  }
+
+  #puter:hover, #puter:active {
+    background-color: rgb(242, 5, 5);
+    color:rgb(242, 5, 5);
+  }
+
+  #washout:hover, #washout:active {
+    background-color: blue;
+    color:blue;
+  }
+  
+  #fanta:hover, #fanta:active {
+    background-color: rgb(99, 211, 1);
+    color:#ff0;
+  }
+  
+  /* #teatrospirit:hover, #teatrospirit:active #spiritteatro{
+    display: block;
+  }
+  
+  #infocomplex:hover, #infocomplex:active #spiritteatro{
+    display: block;
+  }
+  
+  #travica:hover, #travica:active #spiritteatro{
+    display: block;
+  }
+  
+  #burning:hover, #burning:active #burningcities{
+    display: block;
+  }
+  
+  #juhica:hover, #juhica:active #juhicatekst {
+    display:block;
+  }
+
+  #juhica:hover, #juhica:active #juhicatekst_mob {
+    display:block;
+  }
+  
+  #grub:hover, #grub:active #spiritteatro {
+    display:block;
+  }
+  
+  #liminalikea:hover, #liminalikea:active #spiritteatro{
+    display:block;
+  }
+  
+  #silvia:hover, #silvia:active #spiritteatro{
+    display:block;
+  } */
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 380px) and (min-width:360px){  
+
+  /* MOBILE TEST */
+  .grid {
+    display: grid;
+    height: 100%;
+    width:49.7%;
+    float:left;
+    grid-template-columns: repeat(4, 0.3fr);
+    gap: 5.0%;
+    overflow-y: scroll;
+    border: #1E1E1E;
+    /* MOBILE TEST
+    position:relative;
+    */
+  }
+
+  canvas
+  {
+    border: 0px solid rgba(0, 0, 255, 1.0);
+  }
+
+  #actualname {
+    margin-left:20%;
+    margin-top:-15%;
+  }
+
+  #sketch {
+    position: absolute;
+    height: 100%;
+    width:99.5%;
+    top: 0;
+    left: 0.7%;
+    z-index: -100;
+    float:left;
+  }
+
+  #afro1 {
+    text-align: center;
+    margin-top: 0%;
+    margin-left: 5%;
+    width:90%;
+    display: inline-block;
+    font-size: 1.15vh;
+  }
+
+  .grid {
+    display: grid;
+    height: 100%;
+    width:100%;
+    float:left;
+    grid-template-columns: repeat(4, 0.3fr);
+    gap: 0.0%;
+    overflow-y: scroll;
+    border: #1E1E1E;
+    /* MOBILE TEST
+    position:relative;
+    */
+  }
+
+  .square.texttoo {
+    padding-bottom: 0.0%;
+  }
+
+  .square { 
+    height: 25.2vw;
+    position: relative;
+    font-size: x-small;
+  }
+
+  .arenaHighlight {
+    -webkit-text-size-adjust: 100%;
+    font-size: 1.8vw;
+    height: 100.2%;
+  }
+  
+  .arenaTitle {
+    font-size: x-small;
+    margin: auto;
+    text-align: center;
+    width:100%
+  }
+
+  .channelList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width:100%
+  }
+
+  .channelLink {
+    border: 1px solid #000;
+    margin: auto auto 0.5vh;
+    padding: 0.15vh 0.3vw;
+    text-decoration: none;
+    width:90%
+  }
+  
+  .channelLink:hover {
+    background-color: rgb(242, 5, 5);
+    color:#ff0;
+    border: 1px solid rgb(242, 5, 5);
+  }
+
+  .namename {
+    background-color: #FFFFFF;
+    color: rgb(242, 5, 5);
+    font-size: x-small;
+  }
+
+  #afro2 {
+    text-align: center;
+    margin-top: 50%;
+    margin-left: 5%;
+    width: 90%;
+    display: inline-block;
+  }
+
+  #tweetext {
+    z-index: 100;
+    font-size: 7px;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+    margin-top: 45%;
+  }
+
+  #juhicatekst {
+    z-index: 100;
+    font-size: 0.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+
+  #juhicatekst_mob {
+    z-index: 130;
+    font-size: 1.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display:none;
+  }
+
+  #tweetext_mob {
+    z-index: 130;
+    font-size: 1.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display:none;
+  }
+
+  #burningcities_mob {
+    z-index: 100;
+    font-size: 1.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+
+  #spiritteatro_mob {
+    z-index: 100;
+    font-size: 1.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+
+  #spiritteatro_mob1 {
+    z-index: 100;
+    font-size: 1.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+
+  #spiritteatro_mob2 {
+    z-index: 100;
+    font-size: 1.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+
+  #spiritteatro_mob3 {
+    z-index: 100;
+    font-size: 1.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+
+  #spiritteatro_mob4 {
+    z-index: 100;
+    font-size: 1.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+
+  #spiritteatro_mob5 {
+    z-index: 100;
+    font-size: 1.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+
+  #spiritteatro_mob6 {
+    z-index: 100;
+    font-size: 1.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+
+  #spiritteatro_mob7 {
+    z-index: 100;
+    font-size: 1.5vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+  
+  #burningcities {
+    z-index: 100;
+    font-size: 0.45vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+
+  /* #nazdrovje:hover #tweetext {
+    display:block;
+  } */
+
+  .hekatelink{
+    font-size:'5pt';
+  }
+
+  .results {
+    background-color: #fff;
+    color: #000;
+    display: block;
+    padding: 0px;
+    border: 0px solid;
+    margin: auto;
+    font-family: 'times';
+    font-size: 7px;
+  }
+
+  #hekateimg {
+    width:75%;
+    height:80%;
+    max-width: 160px;
+    border: 0px solid;
+    padding-left: 12%;
+  }
+
+  #spiritteatro {
+    z-index: 100;
+    font-size: 0.6vh;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(242, 5, 5);
+    background-color: #FFFFFF;
+    display: none;
+  }
+
+  #magenta:hover, #magenta:active{
+    background-color: magenta;
+    color:#ff0;
+  }
+  
+  #giga:hover, #giga:active {
+    background-color: rgba(0, 0, 255, 1.0);
+    color:#ff0;
+  }
+
+  #puter:hover, #puter:active {
+    background-color: rgb(242, 5, 5);
+    color:rgb(242, 5, 5);
+  }
+
+  #washout:hover, #washout:active {
+    background-color: blue;
+    color:blue;
+  }
+  
+  #fanta:hover, #fanta:active {
+    background-color: rgb(99, 211, 1);
+    color:#ff0;
+  }
+  
+  /* #teatrospirit:hover, #teatrospirit:active #spiritteatro{
+    display: block;
+  }
+  
+  #infocomplex:hover, #infocomplex:active #spiritteatro{
+    display: block;
+  }
+  
+  #travica:hover, #travica:active #spiritteatro{
+    display: block;
+  }
+  
+  #burning:hover, #burning:active #burningcities{
+    display: block;
+  }
+  
+  #juhica:hover, #juhica:active #juhicatekst {
+    display:block;
+  }
+
+  #juhica:hover, #juhica:active #juhicatekst_mob {
+    display:block;
+  }
+  
+  #grub:hover, #grub:active #spiritteatro {
+    display:block;
+  }
+  
+  #liminalikea:hover, #liminalikea:active #spiritteatro{
+    display:block;
+  }
+  
+  #silvia:hover, #silvia:active #spiritteatro{
+    display:block;
+  } */
+
+}
+@media only screen and (min-width: 600px) {
+
+    .grid {
+      display: grid;
+      height: 100%;
+      width:49.7%;
+      float:left;
+      /*grid-template-columns: repeat(4, 0.3fr);*/
+      grid-template-columns: repeat(4, 0.3fr);
+      gap: 0.0%;
+      overflow-y: scroll;
+      border: #1E1E1E;
+      /* MOBILE TEST
+      position:relative;
+      */
+    }
+
+    .square.texttoo {
+      padding-bottom: 6.0%;
+    }
+
+    #actualname {
+      margin-left:20%;
+      margin-top:-15%;
+    }
+
+    .square {
+      font-size: small;
+    }
+
+    .namename {
+      background-color: #FFFFFF;
+      color: rgb(242, 5, 5);
+      font-size: large;
+    }
+
+    #afro1 {
+      text-align: center;
+      margin-top: 0%;
+      margin-left: 5%;
+      width:90%;
+      display: inline-block;
+      font-size: 1.6vh;
+    }
+
+    .arenaHighlight {
+      -webkit-text-size-adjust: 100%;
+      font-size: 10px;
+      height: 100.2%;
+    }
+    
+    .arenaTitle {
+      font-size: medium;
+      margin: auto;
+      text-align: center;
+      width:100%
+    }
+    
+    .channelList {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width:100%
+    }
+
+    .channelLink {
+      border: 1px solid #000;
+      margin: auto auto 12px;
+      padding: 7.8px 4px;
+      text-decoration: none;
+      width:90%
+    }
+    
+    .channelLink:hover {
+      background-color: rgb(242, 5, 5);
+      color:#ff0;
+      border: 1px solid rgb(242, 5, 5);
+    }
+
+    #afro2 {
+      text-align: center;
+      margin-top: 70%;
+      margin-left: 5%;
+      width: 90%;
+      display: inline-block;
+    }
+
+    #tweetext {
+      z-index: 100;
+      font-size: 10px;
+      text-align: justify;
+      padding-left: 5%;
+      padding-right: 5%;
+      color: rgb(242, 5, 5);
+      background-color: #FFFFFF;
+      display: none;
+      margin-top: 65%;
+    }
+
+    #nazdrovje:hover #tweetext {
+      display:block;
+    }
+
+    .results {
+      background-color: #fff;
+      color: #000;
+      display: block;
+      padding: 3px;
+      border: 0px solid;
+      margin: auto;
+      font-family: 'times';
+      font-size: '10pt';
+    }
+
+    #hekateimg {
+      width:85%;
+      height:80%;
+      max-width: 160px;
+      border: 0px solid;
+      padding-left: 7%;
+    }
+
+    #spiritteatro {
+      z-index: 100;
+      font-size: 8px;
+      text-align: justify;
+      padding-left: 5%;
+      padding-right: 5%;
+      color: rgb(242, 5, 5);
+      background-color: #FFFFFF;
+      display: none;
+    }
+
+    #juhicatekst {
+      z-index: 100;
+      font-size: 7.0px;
+      text-align: justify;
+      padding-left: 5%;
+      padding-right: 5%;
+      color: rgb(242, 5, 5);
+      background-color: #FFFFFF;
+      display: none;
+    }
+
+    #juhicatekst_mob {
+      display:none;
+    }
+
+    #tweetext_mob {
+      display:none;
+    }
+
+    #burningcities_mob {
+      display:none;
+    }
+
+    #spiritteatro_mob {
+      display:none;
+    }
+
+    #spiritteatro_mob1 {
+      display:none;
+    }
+
+    #spiritteatro_mob2 {
+      display:none;
+    }
+
+    #spiritteatro_mob3 {
+      display:none;
+    }
+
+    #spiritteatro_mob4 {
+      display:none;
+    }
+
+    #spiritteatro_mob5 {
+      display:none;
+    }
+
+    #spiritteatro_mob6 {
+      display:none;
+    }
+
+    #spiritteatro_mob7 {
+      display:none;
+    }
+    
+    #burningcities {
+      z-index: 100;
+      font-size: 7.2px;
+      text-align: justify;
+      padding-left: 5%;
+      padding-right: 5%;
+      color: rgb(242, 5, 5);
+      background-color: #FFFFFF;
+      display: none;
+    }
+
+    #magenta:hover{
+      background-color: magenta;
+      color:#ff0;
+    }
+    
+    #giga:hover {
+      background-color: rgba(0, 0, 255, 1.0);
+      color:#ff0;
+    }
+
+    #puter:hover, #puter:active {
+      background-color: rgb(242, 5, 5);
+      color:rgb(242, 5, 5);
+    }
+
+    #washout:hover, #washout:active {
+      background-color: blue;
+      color:blue;
+    }
+    
+    #fanta:hover {
+      background-color: rgb(99, 211, 1);
+      color:#ff0;
+    }
+    
+    #teatrospirit:hover #spiritteatro{
+      display: block;
+    }
+    
+    #infocomplex:hover #spiritteatro{
+      display: block;
+    }
+    
+    #travica:hover #spiritteatro{
+      display: block;
+      top: -15vh;
+      left: -30vw;
+    }
+    
+    #burning:hover #burningcities{
+      display: block;
+    }
+    
+    #juhica:hover #juhicatekst {
+      display:block;
+    }
+    
+    #grub:hover #spiritteatro {
+      display:block;
+    }
+
+    #konjcki:hover #spiritteatro {
+      display:block;
+    }
+
+    #davidimo:hover #spiritteatro {
+      display:block;
+    }
+
+    #liminalikea:hover #spiritteatro{
+      display:block;
+    }
+    
+    #silvia:hover #spiritteatro{
+      display:block;
+    }
+}
+
+@-moz-document url-prefix() {
+  .square.texttoo {
+    padding-bottom: 0.0%;
+  }
+}
+
+
+
+
+
+/*# sourceMappingURL=main.css.map*/

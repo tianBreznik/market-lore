@@ -1,0 +1,129 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Polymarket Chance Viewer</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 1rem;
+            background-color: #f5f5f5;
+            font-size: 12px;
+        }
+        .market {
+            background: white;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+        }
+        h1 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        h2 {
+            font-size: 0.9rem;
+            margin: 0 0 0.3rem 0;
+        }
+        .outcome {
+            margin: 0.2rem 0.5rem 0.2rem 0;
+            border-radius: 6px;
+            padding: 0.2em 0.5em;
+            font-weight: bold;
+            box-shadow: 0 0 2px #fff8, 0 0 4px #fff4;
+            display: inline-block;
+            font-size: 0.8rem;
+            border-width: 1.5px;
+            border-style: solid;
+        }
+        p {
+            margin: 0.2rem 0;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+<h1>Polymarket Bet Chances</h1>
+<div id="markets"></div>
+
+<script>
+    const POLYMARKET_API = "http://localhost:3000/api/markets";
+
+    async function fetchMarkets() {
+        const response = await fetch(POLYMARKET_API);
+        const data = await response.json();
+        console.log("Raw markets from API:", data);
+        return data;
+    }
+
+    function formatProbability(prob) {
+        return (parseFloat(prob) * 100).toFixed(1) + "%";
+    }
+
+    function renderMarkets(markets) {
+        const container = document.getElementById("markets");
+        container.innerHTML = "";
+        console.log("markets from API:", markets);
+
+        const filtered = markets.filter(m => m.outcome_prices && m.outcome_prices.length > 0);
+
+        if (filtered.length === 0) {
+            container.innerHTML = "<p>No reef r4levant markets found.</p>";
+            return;
+        }
+
+        filtered.forEach(market => {
+            const div = document.createElement("div");
+            div.className = "market";
+
+            console.log("market:", market);
+            const title = document.createElement("h2");
+            title.textContent = market.title || market.question || "Untitled Market";
+            div.appendChild(title);
+
+            const start = new Date(market.start_date).toLocaleString();
+            const startTime = document.createElement("p");
+            startTime.textContent = `Start Date: ${start}`;
+            div.appendChild(startTime);
+
+            const volume = document.createElement("p");
+            const volumeNum = parseFloat(market.volume || 0);
+            volume.textContent = `Volume: $${volumeNum.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+            div.appendChild(volume);
+
+            market.outcome_prices.forEach((price, index) => {
+                const p = document.createElement("p");
+                p.className = "outcome";
+                let outcomeName = market.outcomes_array && market.outcomes_array[index] ? market.outcomes_array[index] : `Outcome ${index}`;
+                p.textContent = `${outcomeName}: ${formatProbability(price)}`;
+                if (outcomeName.toLowerCase() === "yes") {
+                    p.style.backgroundColor = "#39ff14"; // neon green
+                    p.style.borderColor = "#0a3c0a"; // dark green edge
+                    p.style.boxShadow = "0 0 4px 1px #39ff1488";
+                } else if (outcomeName.toLowerCase() === "no") {
+                    p.style.backgroundColor = "#ff073a"; // neon red
+                    p.style.borderColor = "#3c0a0a"; // dark red edge
+                    p.style.boxShadow = "0 0 4px 1px #ff073a88";
+                } else {
+                    p.style.backgroundColor = "#00cfff"; // neon blue for other outcomes
+                    p.style.borderColor = "#003c4a"; // dark blue edge
+                    p.style.boxShadow = "0 0 4px 1px #00cfff88";
+                }
+                div.appendChild(p);
+            });
+
+            container.appendChild(div);
+        });
+    }
+
+    // Run on page load
+    fetchMarkets().then(renderMarkets).catch(err => {
+        console.error("Error fetching data:", err);
+        document.getElementById("markets").textContent = "Failed to load data.";
+    });
+</script>
+</body>
+</html>
