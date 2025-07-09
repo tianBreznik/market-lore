@@ -75,6 +75,9 @@
             return;
         }
 
+        // Sort markets by volume descending before rendering
+        filtered.sort((a, b) => parseFloat(b.volume || 0) - parseFloat(a.volume || 0));
+
         filtered.forEach(market => {
             const div = document.createElement("div");
             div.className = "market";
@@ -85,9 +88,10 @@
             div.appendChild(title);
 
             const start = new Date(market.start_date).toLocaleString();
-            const startTime = document.createElement("p");
-            startTime.textContent = `Start Date: ${start}`;
-            div.appendChild(startTime);
+            const end = market.endDate ? new Date(market.endDate).toLocaleString() : "?";
+            const dateLine = document.createElement("p");
+            dateLine.textContent = `Start: ${start} | End: ${end}`;
+            div.appendChild(dateLine);
 
             const volume = document.createElement("p");
             const volumeNum = parseFloat(market.volume || 0);
