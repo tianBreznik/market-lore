@@ -1,124 +1,91 @@
 id,question,start_date,end_date,volume,liquidity,outcomes_summary,closed
-554646,"Will turnout be between 1100000 and 1200000 in the NYC Democratic mayoral primary?",2025-06-21T22:00:17.642526Z,2025-06-24T00:00:00Z,95463.31453,4548.02347,"Yes: 3.9% | No: 96.1%",false
-544937,"Will the NYC Mayoral Democratic Primary be decided in round 12 or later?",2025-05-16T14:44:52.277079Z,2025-06-24T12:00:00Z,92835.145414,13516.97727,"Yes: 0.2% | No: 99.8%",false
-551965,"Will Iran enrich uranium to 90% before August?",2025-06-12T19:40:52.754837Z,2025-06-30T00:00:00Z,91828.968559,6262.81431,"Yes: 4.3% | No: 95.7%",false
-554645,"Will turnout be between 1000000 and 1100000 in the NYC Democratic mayoral primary?",2025-06-21T22:00:13.800431Z,2025-06-24T00:00:00Z,90563.672651,1594.3281,"Yes: 93.5% | No: 6.5%",false
-561011,"Wimbledon: Sinner vs. Shelton ",2025-07-08T18:52:06.359991Z,2025-07-09T00:00:00Z,89813.630308,239283.2494,"Sinner : 70.5% | Shelton : 29.5%",false
-552031,"Andrew Cuomo gets the most first-choice votes in the 2025 New York City Mayoral Democratic Primary?",2025-06-13T18:39:23.823007Z,2025-06-24T00:00:00Z,876145.065452,105568.72845,"Yes: 0.1% | No: 100.0%",false
-544928,"Will the NYC Mayoral Democratic Primary be decided in round 3?",2025-05-16T14:44:38.242185Z,2025-06-24T12:00:00Z,848769.583374,11794.74279,"Yes: 99.5% | No: 0.5%",false
-551430,"Will global temperature increase by between 1.10-1.14ºC in June 2025?",2025-06-10T20:02:42.109996Z,2025-06-30T23:55:00Z,82658.219261,4127.4078,"Yes: 0.4% | No: 99.6%",false
-551431,"Will global temperature increase by more than 1.14ºC in June 2025?",2025-06-10T20:02:58.364103Z,2025-06-30T23:55:00Z,79593.908965,4105.04377,"Yes: 0.5% | No: 99.5%",false
-549329,"Will the Starship for SpaceX Starship Flight Test 10 achieve a successful splashdown?",2025-06-02T21:33:06.76Z,2025-06-30T00:00:00Z,79483.96476,1613.3262,"Yes: 60.0% | No: 40.0%",false
-547442,"Will the next government of Suriname be NDP/ABOP?",2025-05-27T15:28:50.296952Z,2025-06-30T12:00:00Z,78652.950223,3231.07365,"Yes: 0.1% | No: 100.0%",false
-560695,"Will the price of Bitcoin be less than $107K on July 8 at 5PM ET?",2025-07-07T14:47:39.860344Z,2025-07-08T21:00:00Z,78333.090371,149236.23131,"Yes: 0.1% | No: 100.0%",false
-556953,"Bitcoin Up or Down - July 8, 4PM ET",2025-07-04T13:05:56.253938Z,2025-07-08T21:00:00Z,76092.573542,41016.85701,"Up: 0.1% | Down: 100.0%",false
-535963,"Will Trump remove majority of reciprocal tariffs before 90 day deadline? ",2025-04-10T17:56:47.518Z,2025-07-08T12:00:00Z,75956.468993,6282.32493,"Yes: 99.4% | No: 0.6%",false
-560250,"Will Chelsea beat Fluminense in regulation time?",2025-07-06T18:31:25.82465Z,2025-07-08T00:00:00Z,74661.978164,69719.95602,"Yes: 100.0% | No: 0.1%",false
-547437,"Will the next government of Suriname be NDP/NPS/ABOP?",2025-05-27T15:28:45.283288Z,2025-06-30T12:00:00Z,71603.389444,2351.60636,"Yes: 98.7% | No: 1.3%",false
-544942,"Will Andrew Cuomo’s RCV margin of victory be between 10% and 15%?",2025-05-16T14:44:52.999438Z,2025-06-24T12:00:00Z,70944.335238,12555.1426,"Yes: 0.3% | No: 99.8%",false
-549328,"Will SpaceX Starship Flight Test 10 Superheavy explode?",2025-06-02T21:33:07.016Z,2025-06-30T00:00:00Z,70906.783671,1468.0313,"Yes: 44.5% | No: 55.5%",false
-552052,"Will Zohran Mamdani’s RCV margin of victory be between 0% and 3% in the New York City Mayoral Democratic Primary?",2025-06-12T22:55:13.397418Z,2025-06-24T00:00:00Z,66046.498189,9608.23032,"Yes: 0.1% | No: 100.0%",false
-551428,"Will global temperature increase by between 1.00-1.04ºC in June 2025?",2025-06-10T20:02:38.175965Z,2025-06-30T23:55:00Z,65253.360801,1641.17443,"Yes: 96.2% | No: 3.9%",false
-552480,"Iran nuclear test in 2025?",2025-06-15T00:30:18.367Z,2025-06-30T23:55:00Z,64507.584455,11921.3624,"Yes: 9.5% | No: 90.5%",false
-544941,"Will Andrew Cuomo’s RCV margin of victory be between 5% and 10%?",2025-05-16T14:44:52.023675Z,2025-06-24T12:00:00Z,62673.689515,11836.4686,"Yes: 0.1% | No: 99.9%",false
-552032,"Brad Lander gets the most first-choice votes in the 2025 New York City Mayoral Democratic Primary?",2025-06-13T18:39:23.316479Z,2025-06-24T00:00:00Z,62290.911,19473.09153,"Yes: 0.1% | No: 100.0%",false
-544943,"Will Andrew Cuomo’s RCV margin of victory be between 15% and 20%?",2025-05-16T14:44:59.339229Z,2025-06-24T12:00:00Z,62090.572792,6446.859,"Yes: 0.3% | No: 99.7%",false
-560696,"Will the price of Bitcoin be between $107K and $108K on July 8 at 5PM ET?",2025-07-07T14:47:40.113057Z,2025-07-08T21:00:00Z,60160.023618,86000.04354,"Yes: 0.1% | No: 100.0%",false
-551427,"Will global temperature increase by between 0.95-0.99ºC in June 2025?",2025-06-10T20:02:38.430036Z,2025-06-30T23:55:00Z,59632.072225,5635.11947,"Yes: 0.5% | No: 99.5%",false
-551429,"Will global temperature increase by between 1.05-1.09ºC in June 2025?",2025-06-10T20:02:37.923436Z,2025-06-30T23:55:00Z,59333.761897,5158.78251,"Yes: 2.8% | No: 97.3%",false
-556933,"Bitcoin Up or Down - July 8, 5PM ET",2025-07-04T13:05:35.563541Z,2025-07-08T22:00:00Z,58623.127409,26592.3272,"Up: 93.0% | Down: 7.0%",false
-552028,"Adrienne Adams gets the most first-choice votes in the 2025 New York City Mayoral Democratic Primary?",2025-06-13T18:39:17.296355Z,2025-06-24T00:00:00Z,58560.2,20668.70775,"Yes: 0.1% | No: 100.0%",false
-544944,"Will Andrew Cuomo’s RCV margin of victory be between 20% and 25%?",2025-05-16T14:44:59.847014Z,2025-06-24T12:00:00Z,58474.163199,13119.75819,"Yes: 0.1% | No: 100.0%",false
-552049,"Will Andrew Cuomo’s RCV margin of victory be between 6% and 9% in the New York City Mayoral Democratic Primary?",2025-06-12T22:55:07.126144Z,2025-06-24T00:00:00Z,55717.820281,7019.8645,"Yes: 0.1% | No: 100.0%",false
-552036,"Jessica Ramos gets the most first-choice votes in the 2025 New York City Mayoral Democratic Primary?",2025-06-13T18:39:26.374647Z,2025-06-24T00:00:00Z,54532.732,26140.47842,"Yes: 0.1% | No: 100.0%",false
-552038,"Whitney Tilson gets the most first-choice votes in the 2025 New York City Mayoral Democratic Primary?",2025-06-13T18:39:32.497745Z,2025-06-24T00:00:00Z,52365.09611,25045.77611,"Yes: 0.1% | No: 100.0%",false
-552051,"Will Andrew Cuomo’s RCV margin of victory be between 0% and 3% in the New York City Mayoral Democratic Primary?",2025-06-12T22:55:13.14519Z,2025-06-24T00:00:00Z,49714.198906,9158.523,"Yes: 0.1% | No: 100.0%",false
-552050,"Will Andrew Cuomo’s RCV margin of victory be between 3% and 6% in the New York City Mayoral Democratic Primary?",2025-06-12T22:55:06.873507Z,2025-06-24T00:00:00Z,48773.584043,10512.05436,"Yes: 0.1% | No: 100.0%",false
-544946,"Will Andrew Cuomo’s RCV margin of victory be greater than 30%?",2025-05-16T14:44:59.084509Z,2025-06-24T12:00:00Z,47722.325726,17506.66796,"Yes: 0.1% | No: 100.0%",false
-540472,"Will US GDP growth in Q2 2025 be greater than 2%?",2025-04-30T20:17:50.971422Z,2025-06-30T12:00:00Z,463886.618688,14879.2345,"Yes: 76.0% | No: 24.0%",false
-552029,"Selma Bartholomew gets the most first-choice votes in the 2025 New York City Mayoral Democratic Primary?",2025-06-13T18:39:17.550257Z,2025-06-24T00:00:00Z,45319.194868,40454.53536,"Yes: 0.1% | No: 100.0%",false
-544945,"Will Andrew Cuomo’s RCV margin of victory be between 25% and 30%?",2025-05-16T14:44:59.593243Z,2025-06-24T12:00:00Z,44966.848013,12320.75327,"Yes: 0.1% | No: 100.0%",false
-560247,"FIFA Club World Cup: Fluminense vs. Chelsea (To Advance) ",2025-07-06T18:31:10.020185Z,2025-07-08T00:00:00Z,432243.874739,110513.382,"Fluminense: 0.1% | Chelsea : 100.0%",false
-560253,"Fluminense vs. Chelsea: 3+ Goals Scored?",2025-07-06T18:31:43.842824Z,2025-07-08T00:00:00Z,43108.222084,19245.17809,"Yes: 0.1% | No: 100.0%",false
-552035,"Paperboy Prince gets the most first-choice votes in the 2025 New York City Mayoral Democratic Primary?",2025-06-13T18:39:27.449017Z,2025-06-24T00:00:00Z,41760.88911,33127.34106,"Yes: 0.1% | No: 100.0%",false
-552047,"First round leader wins NYC Democratic primary?",2025-06-12T22:49:33.563242Z,2025-06-24T00:00:00Z,40851.64363,11485.07252,"Yes: 99.8% | No: 0.3%",false
-544927,"Will the NYC Mayoral Democratic Primary be decided in round 2?",2025-05-16T14:44:37.986571Z,2025-06-24T12:00:00Z,397074.362971,38878.42802,"Yes: 0.3% | No: 99.7%",false
-561013,"Wimbledon: Swiatek vs. Samsonova (W) ",2025-07-08T18:52:18.460139Z,2025-07-09T00:00:00Z,39394.968975,233834.9205,"Swiatek: 72.5% | Samsonova: 27.5%",false
-551426,"Will global temperature increase by less than 0.95ºC in June 2025?",2025-06-10T20:02:38.927581Z,2025-06-30T23:55:00Z,36851.509183,2563.10669,"Yes: 0.3% | No: 99.8%",false
-552056,"Will a candidate other than Andrew Cuomo or Zohran Mamdani win the New York City Mayoral Democratic Primary?",2025-06-12T22:55:22.733581Z,2025-06-24T00:00:00Z,35838.180999,6166.71124,"Yes: 0.3% | No: 99.7%",false
-547443,"Will the next government of Suriname be something else?",2025-05-27T15:28:59.749714Z,2025-06-30T12:00:00Z,35296.45375,1553.84012,"Yes: 1.2% | No: 98.8%",false
-560698,"Will the price of Bitcoin be greater than $109K on July 8 at 5PM ET?",2025-07-07T14:47:59.915226Z,2025-07-08T21:00:00Z,344330.177204,139096.47605,"Yes: 0.1% | No: 100.0%",false
-552037,"Scott Stringer gets the most first-choice votes in the 2025 New York City Mayoral Democratic Primary?",2025-06-13T18:39:33.005212Z,2025-06-24T00:00:00Z,34202.849141,40005.51548,"Yes: 0.1% | No: 100.0%",false
-560701,"Will the price of Ethereum be between $2400 and $2500 on July 8 at 5PM ET?",2025-07-07T14:50:20.430566Z,2025-07-08T21:00:00Z,33181.097335,108658.97205,"Yes: 0.1% | No: 100.0%",false
-547441,"Will the next government of Suriname be VHP/ABOP?",2025-05-27T15:28:50.043493Z,2025-06-30T12:00:00Z,32059.323212,9123.95618,"Yes: 0.1% | No: 100.0%",false
-552010,"Will Brad Lander finish third in the 2025 New York City Mayoral Democratic Primary?",2025-06-12T21:24:26.508152Z,2025-06-24T00:00:00Z,30218.539001,4768.72556,"Yes: 99.7% | No: 0.4%",false
-552989,"Will Andrew Cuomo win Manhattan in the New York City Mayoral Democratic Primary?",2025-06-16T18:52:11.753286Z,2025-06-24T00:00:00Z,29843.449356,1730.39983,"Yes: 4.5% | No: 95.5%",false
-552030,"Michael Blake gets the most first-choice votes in the 2025 New York City Mayoral Democratic Primary?",2025-06-13T18:39:23.569824Z,2025-06-24T00:00:00Z,28990.21011,46988.09049,"Yes: 0.1% | No: 100.0%",false
-540475,"Will US GDP growth in Q2 2025 be between 0% and -1%?",2025-04-30T20:18:51.659216Z,2025-06-30T12:00:00Z,285918.732851,27691.42164,"Yes: 1.7% | No: 98.3%",false
-552034,"Zellnor Myrie gets the most first-choice votes in the 2025 New York City Mayoral Democratic Primary?",2025-06-13T18:39:24.329448Z,2025-06-24T00:00:00Z,26973.11311,36373.54313,"Yes: 0.1% | No: 100.0%",false
-552006,"Will Adrienne Adams finish third in the 2025 New York City Mayoral Democratic Primary?",2025-06-12T21:24:21.427774Z,2025-06-24T00:00:00Z,26374.067208,11416.04999,"Yes: 0.1% | No: 100.0%",false
-553113,"Brewers vs. Cubs",2025-06-17T08:02:15.905978Z,2025-06-26T00:05:00Z,26314.882571,1607.6761,"Brewers: 49.5% | Cubs: 50.5%",false
-561012,"Wimbledon: Cobolli vs. Djokovic ",2025-07-08T18:52:12.353323Z,2025-07-09T00:00:00Z,25716.668971,192746.1041,"Cobolli: 9.0% | Djokovic: 91.0%",false
-547440,"Will the next government of Suriname be NDP/VHP/NPS?",2025-05-27T15:28:45.537077Z,2025-06-30T12:00:00Z,25082.974707,2678.68439,"Yes: 0.3% | No: 99.8%",false
-552055,"Will Zohran Mamdani’s RCV margin of victory be greater than 9% in the New York City Mayoral Democratic Primary?",2025-06-12T22:55:16.49052Z,2025-06-24T00:00:00Z,249278.168194,20059.79261,"Yes: 99.5% | No: 0.5%",false
-547439,"Will the next government of Suriname be NDP/VHP/ABOP?",2025-05-27T15:28:46.44701Z,2025-06-30T12:00:00Z,24193.3235,6187.67613,"Yes: 0.1% | No: 100.0%",false
-560694,"Hall of Fame Open: Sock/Ackman vs. Jasika/Tomic",2025-07-07T17:12:58.887Z,2025-07-09T00:00:00Z,23896.490259,162091.50927,"Sock/Ackman: 2.3% | Jasika/Tomic: 97.8%",false
-552014,"Will Zohran Mamdani finish third in the 2025 New York City Mayoral Democratic Primary?",2025-06-12T21:24:31.175795Z,2025-06-24T00:00:00Z,23453.113465,17609.08379,"Yes: 0.1% | No: 100.0%",false
-554647,"Will turnout be greater than 1200000 in the NYC Democratic mayoral primary?",2025-06-21T22:00:29.784822Z,2025-06-24T00:00:00Z,23423.524415,6388.61324,"Yes: 0.2% | No: 99.8%",false
-554582,"Will Zohran Madani’s vote share be greater than 32% in the first round of the NYC Democratic mayoral primary?",2025-06-20T22:43:19.540635Z,2025-06-24T00:00:00Z,22858.20564,2964.2251,"Yes: 99.4% | No: 0.7%",false
-547746,"Will Donald Trump issue fewer than 10 executive orders in June?",2025-05-27T20:02:43.838362Z,2025-06-30T12:00:00Z,22249.107971,1651.40302,"Yes: 99.6% | No: 0.4%",false
-560258,"FIFA Club World Cup: PSG vs. Real Madrid (To Advance)",2025-07-06T18:31:55.012Z,2025-07-09T00:00:00Z,22138.37993,162690.83,"PSG: 55.5% | Real Madrid: 44.5%",false
-537692,"Will GPT-5 be released by July 31?",2025-04-16T21:16:02.97787Z,2025-06-30T12:00:00Z,219986.500316,4170.0494,"Yes: 26.0% | No: 74.0%",false
-546814,"Will Zelenskyy wear a suit before July?",2025-05-22T22:31:50.2Z,2025-06-30T12:00:00Z,216263328.119226,4999354.42975,"Yes: 0.4% | No: 99.7%",false
-547438,"Will the next government of Suriname be VHP/NPS/ABOP?",2025-05-27T15:28:46.193458Z,2025-06-30T12:00:00Z,21398.055482,3532.07584,"Yes: 0.1% | No: 100.0%",false
-552054,"Will Zohran Mamdani’s RCV margin of victory be between 6% and 9% in the New York City Mayoral Democratic Primary?",2025-06-12T22:55:12.639348Z,2025-06-24T00:00:00Z,209894.169538,32480.73506,"Yes: 0.1% | No: 100.0%",false
-554643,"Will turnout be less than 900000 in the NYC Democratic mayoral primary?",2025-06-21T22:00:13.546128Z,2025-06-24T00:00:00Z,20872.759521,5431.592,"Yes: 0.4% | No: 99.6%",false
-548302,"Tesla launches unsupervised full self driving (FSD) by December 31?",2025-05-29T21:54:51.386782Z,2025-06-30T12:00:00Z,206666.824532,9541.3493,"Yes: 33.5% | No: 66.5%",false
-554534,"Will Andrew Cuomo's first round margin of victory be between 5% and 10%?",2025-06-20T22:48:40.331963Z,2025-06-24T00:00:00Z,20579.399416,4370.63815,"Yes: 0.3% | No: 99.8%",false
-549326,"Will SpaceX Starship Flight Test 10 launch by July 10?",2025-06-02T21:33:01.698713Z,2025-06-30T00:00:00Z,20478.894294,4513.9967,"Yes: 0.4% | No: 99.6%",false
-554644,"Will turnout be between 900000 and 1000000 in the NYC Democratic mayoral primary?",2025-06-21T22:00:14.054068Z,2025-06-24T00:00:00Z,20297.080973,2658.75152,"Yes: 0.1% | No: 100.0%",false
-540474,"Will US GDP growth in Q2 2025 be between 1% and 0%?",2025-04-30T20:18:51.661754Z,2025-06-30T12:00:00Z,201453.930738,17759.05326,"Yes: 3.7% | No: 96.3%",false
-560697,"Will the price of Bitcoin be between $108K and $109K on July 8 at 5PM ET?",2025-07-07T14:47:49.920541Z,2025-07-08T21:00:00Z,199543.681412,139635.44944,"Yes: 100.0% | No: 0.1%",false
-552991,"Will Andrew Cuomo win Staten Island in the New York City Mayoral Democratic Primary?",2025-06-16T18:52:12.006207Z,2025-06-24T00:00:00Z,19526.007692,1318.8552,"Yes: 95.3% | No: 4.7%",false
-544929,"Will the NYC Mayoral Democratic Primary be decided in round 4?",2025-05-16T14:44:44.892548Z,2025-06-24T12:00:00Z,185249.025307,12034.97296,"Yes: 0.1% | No: 99.9%",false
-540476,"Will US GDP growth in Q2 2025 be between -1% and -2%?",2025-04-30T20:18:51.655713Z,2025-06-30T12:00:00Z,184987.687161,13694.29733,"Yes: 1.1% | No: 98.9%",false
-560063,"Ethereum Up or Down - July 8, 4PM ET",2025-07-04T12:37:10.273007Z,2025-07-08T21:00:00Z,17878.62702,45226.38559,"Up: 0.1% | Down: 100.0%",false
-552990,"Will Andrew Cuomo win Queens in the New York City Mayoral Democratic Primary?",2025-06-16T18:52:05.511038Z,2025-06-24T00:00:00Z,17780.621052,2814.56523,"Yes: 0.7% | No: 99.3%",false
-547436,"Will the next government of Suriname be NDP/VHP?",2025-05-27T15:28:40.554537Z,2025-06-30T12:00:00Z,17593.353802,3559.29342,"Yes: 0.1% | No: 100.0%",false
-560700,"Will the price of Ethereum be less than $2400 on July 8 at 5PM ET?",2025-07-07T14:50:20.178218Z,2025-07-08T21:00:00Z,17480.894415,100814.19557,"Yes: 0.1% | No: 100.0%",false
-540473,"Will US GDP growth in Q2 2025 be between 2% and 1%?",2025-04-30T20:18:31.400434Z,2025-06-30T12:00:00Z,172542.208952,20661.2405,"Yes: 17.0% | No: 83.0%",false
-560703,"Will the price of Ethereum be greater than $2600 on July 8 at 5PM ET?",2025-07-07T14:50:45.983703Z,2025-07-08T21:00:00Z,168998.001287,66115.9618,"Yes: 0.1% | No: 100.0%",false
-540477,"Will US GDP growth in Q2 2025 be less than 2%?",2025-04-30T20:18:51.664503Z,2025-06-30T12:00:00Z,167880.968501,9780.47956,"Yes: 1.0% | No: 99.0%",false
-554535,"Will Andrew Cuomo's first round margin of victory be between 10% and 15%?",2025-06-20T22:48:40.078153Z,2025-06-24T00:00:00Z,16376.972546,10877.22155,"Yes: 0.3% | No: 99.8%",false
-561014,"Wimbledon: Andreeva vs. Bencic (W) ",2025-07-08T18:52:26.520833Z,2025-07-09T00:00:00Z,16305.254296,142311.9023,"Andreeva: 69.0% | Bencic: 31.0%",false
-548329,"2025 June hottest on record?",2025-05-30T16:08:09.5Z,2025-06-30T12:00:00Z,161558.193121,6613.96436,"Yes: 0.6% | No: 99.4%",false
-554533,"Will Andrew Cuomo's first round margin of victory be less than 5%?",2025-06-20T22:48:39.824905Z,2025-06-24T00:00:00Z,15540.812292,4715.81924,"Yes: 99.4% | No: 0.6%",false
-544935,"Will the NYC Mayoral Democratic Primary be decided in round 10?",2025-05-16T14:44:48.208005Z,2025-06-24T12:00:00Z,152882.127859,16149.10938,"Yes: 0.1% | No: 100.0%",false
-552987,"Will Andrew Cuomo win The Bronx in the New York City Mayoral Democratic Primary?",2025-06-16T18:52:15.554477Z,2025-06-24T00:00:00Z,15006.446261,3479.23807,"Yes: 99.7% | No: 0.4%",false
-551896,"Will ""Smurfs"" Rotten Tomatoes score be 70 or higher?",2025-06-12T16:22:30.928203Z,2025-06-18T00:00:00Z,14962.747826,3817.2781,"Yes: 3.6% | No: 96.4%",false
-549327,"Will the chopsticks catch SpaceX Starship Flight Test 10 Superheavy booster?",2025-06-02T21:33:01.953Z,2025-06-30T00:00:00Z,14402.331171,1458.4814,"Yes: 51.0% | No: 49.0%",false
-544932,"Will the NYC Mayoral Democratic Primary be decided in round 7?",2025-05-16T14:44:44.131352Z,2025-06-24T12:00:00Z,142233.526747,5651.97872,"Yes: 0.1% | No: 100.0%",false
-544933,"Will the NYC Mayoral Democratic Primary be decided in round 8?",2025-05-16T14:44:47.953235Z,2025-06-24T12:00:00Z,142071.067784,10879.69457,"Yes: 0.1% | No: 100.0%",false
-560702,"Will the price of Ethereum be between $2500 and $2600 on July 8 at 5PM ET?",2025-07-07T14:50:30.197804Z,2025-07-08T21:00:00Z,141936.547253,46505.74635,"Yes: 100.0% | No: 0.1%",false
-552011,"Will Scott Stringer finish third in the 2025 New York City Mayoral Democratic Primary?",2025-06-12T21:24:30.670263Z,2025-06-24T00:00:00Z,14052.585543,8988.56744,"Yes: 0.1% | No: 100.0%",false
-552033,"Zohran Mamdani gets the most first-choice votes in the 2025 New York City Mayoral Democratic Primary?",2025-06-13T18:39:24.075985Z,2025-06-24T00:00:00Z,1399133.047896,44590.0785,"Yes: 99.7% | No: 0.3%",false
-544934,"Will the NYC Mayoral Democratic Primary be decided in round 9?",2025-05-16T14:44:49.166626Z,2025-06-24T12:00:00Z,139334.039073,7167.77725,"Yes: 0.1% | No: 100.0%",false
-544926,"Will the NYC Mayoral Democratic Primary be decided in round 1?",2025-05-16T14:44:38.496287Z,2025-06-24T12:00:00Z,138149.703024,9811.75219,"Yes: 0.1% | No: 100.0%",false
-560248,"Will Fluminense beat Chelsea in regulation time?",2025-07-06T18:31:15.906146Z,2025-07-08T00:00:00Z,135928.635941,61346.15583,"Yes: 0.1% | No: 100.0%",false
-547598,"Will Cristiano Ronaldo play in FIFA Club World Cup?",2025-05-27T17:41:44.178Z,2025-06-14T12:00:00Z,133524.683622,4895.76,"Yes: 0.1% | No: 99.9%",false
-552988,"Will Andrew Cuomo win Brooklyn in the New York City Mayoral Democratic Primary?",2025-06-16T18:52:11.499174Z,2025-06-24T00:00:00Z,13111.706152,2568.59735,"Yes: 0.3% | No: 99.7%",false
-544931,"Will the NYC Mayoral Democratic Primary be decided in round 6?",2025-05-16T14:44:44.385264Z,2025-06-24T12:00:00Z,126883.151112,11059.13084,"Yes: 0.1% | No: 100.0%",false
-560249,"Will Fluminense vs. Chelsea end in a draw after regulation time?",2025-07-06T18:31:16.158403Z,2025-07-08T00:00:00Z,12682.630625,21098.23994,"Yes: 0.1% | No: 100.0%",false
-544930,"Will the NYC Mayoral Democratic Primary be decided in round 5?",2025-05-16T14:44:44.638526Z,2025-06-24T12:00:00Z,126505.316099,10400.30183,"Yes: 0.1% | No: 99.9%",false
-544940,"Will Andrew Cuomo’s RCV margin of victory be less than 5%?",2025-05-16T14:44:53.252844Z,2025-06-24T12:00:00Z,124645.545881,10712.04471,"Yes: 97.9% | No: 2.1%",false
-552048,"Will Andrew Cuomo’s RCV margin of victory be greater than 9% in the New York City Mayoral Democratic Primary?",2025-06-12T22:55:06.620922Z,2025-06-24T00:00:00Z,121879.882023,12509.58254,"Yes: 0.1% | No: 99.9%",false
-544936,"Will the NYC Mayoral Democratic Primary be decided in round 11?",2025-05-16T14:44:48.913024Z,2025-06-24T12:00:00Z,120551.647301,12959.48001,"Yes: 0.1% | No: 100.0%",false
-560254,"PSG vs. Real Madrid: 3+ Goals Scored? ",2025-07-06T18:31:39.817684Z,2025-07-09T00:00:00Z,11640.310814,59097.1403,"Yes: 59.0% | No: 41.0%",false
-559895,"Will the highest temperature in London be between 76-77°F on July 8?",2025-07-04T09:38:30.969562Z,2025-07-08T12:00:00Z,11222.641173,6556.12133,"Yes: 0.1% | No: 100.0%",false
-552015,"Will Whitney Tilson finish third in the 2025 New York City Mayoral Democratic Primary?",2025-06-12T21:24:32.73757Z,2025-06-24T00:00:00Z,10919.5375,14715.7451,"Yes: 0.3% | No: 99.8%",false
-552016,"Will Paperboy Prince finish third in the 2025 New York City Mayoral Democratic Primary?",2025-06-12T21:24:30.923204Z,2025-06-24T00:00:00Z,10825.1205,19446.8611,"Yes: 0.3% | No: 99.8%",false
-554536,"Will Andrew Cuomo's first round margin of victory be between 15% and 20%?",2025-06-20T22:48:42.812386Z,2025-06-24T00:00:00Z,10823.814422,3488.2164,"Yes: 0.4% | No: 99.6%",false
-560550,"MSI Playoffs: Bilibili Gaming vs. FlyQuest",2025-07-07T02:35:27.421391Z,2025-07-09T00:00:00Z,105528.723879,128360.5235,"Bilibili Gaming: 73.5% | FlyQuest: 26.5%",false
-552053,"Will Zohran Mamdani’s RCV margin of victory be between 3% and 6% in the New York City Mayoral Democratic Primary?",2025-06-12T22:55:12.892335Z,2025-06-24T00:00:00Z,104824.559845,10296.90155,"Yes: 0.1% | No: 100.0%",false
-549618,"Will Pump.fun perform an airdrop by July 31? ",2025-06-03T20:40:49.966058Z,2025-06-30T00:00:00Z,103359.890663,6652.9582,"Yes: 34.0% | No: 66.0%",false
-547750,"Will Donald Trump issue 25-29 executive orders in June?",2025-05-27T20:02:48.396545Z,2025-06-30T12:00:00Z,10147.960878,2046.21403,"Yes: 0.2% | No: 99.8%",false
+554646,"Will turnout be between 1100000 and 1200000 in the NYC Democratic mayoral primary?",2025-06-21T22:00:17.642526Z,2025-06-24T00:00:00Z,97753.505348,8245.62364,"Yes: 5.6% | No: 94.4%",false
+544937,"Will the NYC Mayoral Democratic Primary be decided in round 12 or later?",2025-05-16T14:44:52.277079Z,2025-06-24T12:00:00Z,92835.145414,15123.71087,"Yes: 0.1% | No: 99.9%",false
+554645,"Will turnout be between 1000000 and 1100000 in the NYC Democratic mayoral primary?",2025-06-21T22:00:13.800431Z,2025-06-24T00:00:00Z,91089.176297,5508.0709,"Yes: 92.5% | No: 7.5%",false
+552031,"Andrew Cuomo gets the most first-choice votes in the 2025 New York City Mayoral Democratic Primary?",2025-06-13T18:39:23.823007Z,2025-06-24T00:00:00Z,876145.065452,105563.69045,"Yes: 0.1% | No: 100.0%",false
+544928,"Will the NYC Mayoral Democratic Primary be decided in round 3?",2025-05-16T14:44:38.242185Z,2025-06-24T12:00:00Z,861057.233911,4718.33637,"Yes: 98.8% | No: 1.2%",false
+547442,"Will the next government of Suriname be NDP/ABOP?",2025-05-27T15:28:50.296952Z,2025-06-30T12:00:00Z,79999.622223,4735.66657,"Yes: 0.3% | No: 99.8%",false
+549329,"Will the Starship for SpaceX Starship Flight Test 10 achieve a successful splashdown?",2025-06-02T21:33:06.76Z,2025-06-30T00:00:00Z,79782.286918,1357.7725,"Yes: 37.0% | No: 63.0%",false
+547437,"Will the next government of Suriname be NDP/NPS/ABOP?",2025-05-27T15:28:45.283288Z,2025-06-30T12:00:00Z,79030.607544,4973.10546,"Yes: 99.5% | No: 0.5%",false
+549328,"Will SpaceX Starship Flight Test 10 Superheavy explode?",2025-06-02T21:33:07.016Z,2025-06-30T00:00:00Z,71356.010677,1879.4574,"Yes: 37.5% | No: 62.5%",false
+544942,"Will Andrew Cuomo’s RCV margin of victory be between 10% and 15%?",2025-05-16T14:44:52.999438Z,2025-06-24T12:00:00Z,70955.575238,12251.4346,"Yes: 0.1% | No: 99.9%",false
+552032,"Brad Lander gets the most first-choice votes in the 2025 New York City Mayoral Democratic Primary?",2025-06-13T18:39:23.316479Z,2025-06-24T00:00:00Z,68680.911,13067.65253,"Yes: 0.1% | No: 100.0%",false
+552052,"Will Zohran Mamdani’s RCV margin of victory be between 0% and 3% in the New York City Mayoral Democratic Primary?",2025-06-12T22:55:13.397418Z,2025-06-24T00:00:00Z,67057.068189,7738.40136,"Yes: 0.1% | No: 100.0%",false
+552480,"Iran nuclear test in 2025?",2025-06-15T00:30:18.367Z,2025-06-30T23:55:00Z,66706.419451,13431.9524,"Yes: 8.5% | No: 91.5%",false
+544941,"Will Andrew Cuomo’s RCV margin of victory be between 5% and 10%?",2025-05-16T14:44:52.023675Z,2025-06-24T12:00:00Z,62758.159515,12122.88454,"Yes: 0.1% | No: 99.9%",false
+544943,"Will Andrew Cuomo’s RCV margin of victory be between 15% and 20%?",2025-05-16T14:44:59.339229Z,2025-06-24T12:00:00Z,62301.022792,51263.60715,"Yes: 0.2% | No: 99.8%",false
+552036,"Jessica Ramos gets the most first-choice votes in the 2025 New York City Mayoral Democratic Primary?",2025-06-13T18:39:26.374647Z,2025-06-24T00:00:00Z,60532.732,20144.57342,"Yes: 0.1% | No: 100.0%",false
+552028,"Adrienne Adams gets the most first-choice votes in the 2025 New York City Mayoral Democratic Primary?",2025-06-13T18:39:17.296355Z,2025-06-24T00:00:00Z,59860.2,21341.50275,"Yes: 0.1% | No: 100.0%",false
+544944,"Will Andrew Cuomo’s RCV margin of victory be between 20% and 25%?",2025-05-16T14:44:59.847014Z,2025-06-24T12:00:00Z,58845.433199,13534.32337,"Yes: 0.3% | No: 99.7%",false
+552049,"Will Andrew Cuomo’s RCV margin of victory be between 6% and 9% in the New York City Mayoral Democratic Primary?",2025-06-12T22:55:07.126144Z,2025-06-24T00:00:00Z,56717.820281,5133.02157,"Yes: 0.1% | No: 100.0%",false
+552038,"Whitney Tilson gets the most first-choice votes in the 2025 New York City Mayoral Democratic Primary?",2025-06-13T18:39:32.497745Z,2025-06-24T00:00:00Z,53365.09611,58874.5291,"Yes: 0.1% | No: 100.0%",false
+552051,"Will Andrew Cuomo’s RCV margin of victory be between 0% and 3% in the New York City Mayoral Democratic Primary?",2025-06-12T22:55:13.14519Z,2025-06-24T00:00:00Z,51714.198906,7544.92,"Yes: 0.1% | No: 100.0%",false
+552035,"Paperboy Prince gets the most first-choice votes in the 2025 New York City Mayoral Democratic Primary?",2025-06-13T18:39:27.449017Z,2025-06-24T00:00:00Z,50360.88911,24534.24506,"Yes: 0.1% | No: 100.0%",false
+552029,"Selma Bartholomew gets the most first-choice votes in the 2025 New York City Mayoral Democratic Primary?",2025-06-13T18:39:17.550257Z,2025-06-24T00:00:00Z,50319.194868,40449.89536,"Yes: 0.1% | No: 100.0%",false
+552050,"Will Andrew Cuomo’s RCV margin of victory be between 3% and 6% in the New York City Mayoral Democratic Primary?",2025-06-12T22:55:06.873507Z,2025-06-24T00:00:00Z,49773.584043,7998.28882,"Yes: 0.1% | No: 100.0%",false
+544946,"Will Andrew Cuomo’s RCV margin of victory be greater than 30%?",2025-05-16T14:44:59.084509Z,2025-06-24T12:00:00Z,48035.415726,17490.34243,"Yes: 0.1% | No: 100.0%",false
+540472,"Will US GDP growth in Q2 2025 be greater than 2%?",2025-04-30T20:17:50.971422Z,2025-06-30T12:00:00Z,477797.173022,12516.8277,"Yes: 77.0% | No: 23.0%",false
+552034,"Zellnor Myrie gets the most first-choice votes in the 2025 New York City Mayoral Democratic Primary?",2025-06-13T18:39:24.329448Z,2025-06-24T00:00:00Z,46073.11311,17266.48013,"Yes: 0.1% | No: 100.0%",false
+544945,"Will Andrew Cuomo’s RCV margin of victory be between 25% and 30%?",2025-05-16T14:44:59.593243Z,2025-06-24T12:00:00Z,45322.638013,11996.32505,"Yes: 0.1% | No: 100.0%",false
+544927,"Will the NYC Mayoral Democratic Primary be decided in round 2?",2025-05-16T14:44:37.986571Z,2025-06-24T12:00:00Z,416592.818797,7652.72714,"Yes: 0.9% | No: 99.1%",false
+552047,"First round leader wins NYC Democratic primary?",2025-06-12T22:49:33.563242Z,2025-06-24T00:00:00Z,41051.64363,11243.65252,"Yes: 99.8% | No: 0.3%",false
+552037,"Scott Stringer gets the most first-choice votes in the 2025 New York City Mayoral Democratic Primary?",2025-06-13T18:39:33.005212Z,2025-06-24T00:00:00Z,39202.849141,38299.47848,"Yes: 0.1% | No: 100.0%",false
+547443,"Will the next government of Suriname be something else?",2025-05-27T15:28:59.749714Z,2025-06-30T12:00:00Z,38567.321156,2869.18601,"Yes: 0.4% | No: 99.6%",false
+552030,"Michael Blake gets the most first-choice votes in the 2025 New York City Mayoral Democratic Primary?",2025-06-13T18:39:23.569824Z,2025-06-24T00:00:00Z,38490.21011,37495.16349,"Yes: 0.1% | No: 100.0%",false
+552056,"Will a candidate other than Andrew Cuomo or Zohran Mamdani win the New York City Mayoral Democratic Primary?",2025-06-12T22:55:22.733581Z,2025-06-24T00:00:00Z,35838.180999,6857.72624,"Yes: 0.3% | No: 99.8%",false
+547441,"Will the next government of Suriname be VHP/ABOP?",2025-05-27T15:28:50.043493Z,2025-06-30T12:00:00Z,34555.527656,7021.94772,"Yes: 0.3% | No: 99.8%",false
+552989,"Will Andrew Cuomo win Manhattan in the New York City Mayoral Democratic Primary?",2025-06-16T18:52:11.753286Z,2025-06-24T00:00:00Z,34476.581356,5618.1688,"Yes: 0.5% | No: 99.5%",false
+554582,"Will Zohran Madani’s vote share be greater than 32% in the first round of the NYC Democratic mayoral primary?",2025-06-20T22:43:19.540635Z,2025-06-24T00:00:00Z,33271.064034,25534.2882,"Yes: 99.9% | No: 0.1%",false
+540475,"Will US GDP growth in Q2 2025 be between 0% and -1%?",2025-04-30T20:18:51.659216Z,2025-06-30T12:00:00Z,328431.416892,32115.17767,"Yes: 1.6% | No: 98.5%",false
+552010,"Will Brad Lander finish third in the 2025 New York City Mayoral Democratic Primary?",2025-06-12T21:24:26.508152Z,2025-06-24T00:00:00Z,31596.418635,49247.63823,"Yes: 99.7% | No: 0.4%",false
+549618,"Will Pump.fun perform an airdrop by July 31? ",2025-06-03T20:40:49.966Z,2025-06-30T00:00:00Z,306652.061858,10949.031,"Yes: 61.0% | No: 39.0%",false
+553113,"Brewers vs. Cubs",2025-06-17T08:02:15.905978Z,2025-06-26T00:05:00Z,26486.732066,1829.9556,"Brewers: 50.0% | Cubs: 50.0%",false
+552006,"Will Adrienne Adams finish third in the 2025 New York City Mayoral Democratic Primary?",2025-06-12T21:24:21.427774Z,2025-06-24T00:00:00Z,26374.067208,11875.43679,"Yes: 0.1% | No: 100.0%",false
+549326,"Will SpaceX Starship Flight Test 10 launch by July 10?",2025-06-02T21:33:01.698713Z,2025-06-30T00:00:00Z,25787.757313,4555.09382,"Yes: 0.4% | No: 99.7%",false
+552055,"Will Zohran Mamdani’s RCV margin of victory be greater than 9% in the New York City Mayoral Democratic Primary?",2025-06-12T22:55:16.49052Z,2025-06-24T00:00:00Z,253247.972644,84395.86098,"Yes: 99.7% | No: 0.3%",false
+547440,"Will the next government of Suriname be NDP/VHP/NPS?",2025-05-27T15:28:45.537077Z,2025-06-30T12:00:00Z,25098.214707,3721.91247,"Yes: 0.2% | No: 99.8%",false
+537692,"Will GPT-5 be released by July 31?",2025-04-16T21:16:02.97787Z,2025-06-30T12:00:00Z,250767.42489,13000.4334,"Yes: 26.5% | No: 73.5%",false
+547439,"Will the next government of Suriname be NDP/VHP/ABOP?",2025-05-27T15:28:46.44701Z,2025-06-30T12:00:00Z,24393.5235,7112.00572,"Yes: 0.1% | No: 100.0%",false
+554647,"Will turnout be greater than 1200000 in the NYC Democratic mayoral primary?",2025-06-21T22:00:29.784822Z,2025-06-24T00:00:00Z,24327.486896,8162.22897,"Yes: 0.4% | No: 99.7%",false
+552014,"Will Zohran Mamdani finish third in the 2025 New York City Mayoral Democratic Primary?",2025-06-12T21:24:31.175795Z,2025-06-24T00:00:00Z,23453.113465,17625.46479,"Yes: 0.1% | No: 100.0%",false
+554644,"Will turnout be between 900000 and 1000000 in the NYC Democratic mayoral primary?",2025-06-21T22:00:14.054068Z,2025-06-24T00:00:00Z,22744.092173,5662.21592,"Yes: 0.3% | No: 99.7%",false
+552054,"Will Zohran Mamdani’s RCV margin of victory be between 6% and 9% in the New York City Mayoral Democratic Primary?",2025-06-12T22:55:12.639348Z,2025-06-24T00:00:00Z,226234.169538,16567.37868,"Yes: 0.1% | No: 100.0%",false
+551896,"Will ""Smurfs"" Rotten Tomatoes score be 70 or higher?",2025-06-12T16:22:30.928203Z,2025-06-18T00:00:00Z,22004.672152,5510.81511,"Yes: 0.4% | No: 99.6%",false
+540474,"Will US GDP growth in Q2 2025 be between 1% and 0%?",2025-04-30T20:18:51.661754Z,2025-06-30T12:00:00Z,214786.797167,21179.19561,"Yes: 2.9% | No: 97.2%",false
+548302,"Tesla launches unsupervised full self driving (FSD) by December 31?",2025-05-29T21:54:51.386782Z,2025-06-30T12:00:00Z,214523.628269,9165.0406,"Yes: 32.0% | No: 68.0%",false
+547438,"Will the next government of Suriname be VHP/NPS/ABOP?",2025-05-27T15:28:46.193458Z,2025-06-30T12:00:00Z,21398.055482,3997.56528,"Yes: 0.1% | No: 100.0%",false
+554643,"Will turnout be less than 900000 in the NYC Democratic mayoral primary?",2025-06-21T22:00:13.546128Z,2025-06-24T00:00:00Z,21226.499521,7794.24607,"Yes: 0.4% | No: 99.6%",false
+540476,"Will US GDP growth in Q2 2025 be between -1% and -2%?",2025-04-30T20:18:51.655713Z,2025-06-30T12:00:00Z,209531.874662,22285.15843,"Yes: 0.9% | No: 99.2%",false
+554534,"Will Andrew Cuomo's first round margin of victory be between 5% and 10%?",2025-06-20T22:48:40.331963Z,2025-06-24T00:00:00Z,20779.399416,4677.14015,"Yes: 0.2% | No: 99.8%",false
+552990,"Will Andrew Cuomo win Queens in the New York City Mayoral Democratic Primary?",2025-06-16T18:52:05.511038Z,2025-06-24T00:00:00Z,20343.311552,24631.8534,"Yes: 0.1% | No: 100.0%",false
+540477,"Will US GDP growth in Q2 2025 be less than 2%?",2025-04-30T20:18:51.664503Z,2025-06-30T12:00:00Z,199007.165715,21711.04364,"Yes: 0.9% | No: 99.2%",false
+552991,"Will Andrew Cuomo win Staten Island in the New York City Mayoral Democratic Primary?",2025-06-16T18:52:12.006207Z,2025-06-24T00:00:00Z,19688.442266,2347.975,"Yes: 89.5% | No: 10.4%",false
+544929,"Will the NYC Mayoral Democratic Primary be decided in round 4?",2025-05-16T14:44:44.892548Z,2025-06-24T12:00:00Z,186491.025307,7399.40903,"Yes: 0.1% | No: 99.9%",false
+540473,"Will US GDP growth in Q2 2025 be between 2% and 1%?",2025-04-30T20:18:31.400434Z,2025-06-30T12:00:00Z,182104.468136,18717.287,"Yes: 18.0% | No: 82.0%",false
+547436,"Will the next government of Suriname be NDP/VHP?",2025-05-27T15:28:40.554537Z,2025-06-30T12:00:00Z,17593.353802,4034.90275,"Yes: 0.1% | No: 100.0%",false
+554533,"Will Andrew Cuomo's first round margin of victory be less than 5%?",2025-06-20T22:48:39.824905Z,2025-06-24T00:00:00Z,17016.492292,4215.99345,"Yes: 99.9% | No: 0.1%",false
+554574,"Will Brad Lander’s vote share be between 9% and 12% in the first round of the NYC Democratic mayoral primary?",2025-06-20T22:45:34.001428Z,2025-06-24T00:00:00Z,16383.440782,2713.94631,"Yes: 99.7% | No: 0.4%",false
+554535,"Will Andrew Cuomo's first round margin of victory be between 10% and 15%?",2025-06-20T22:48:40.078153Z,2025-06-24T00:00:00Z,16376.972546,11098.66155,"Yes: 0.3% | No: 99.8%",false
+547598,"Will Cristiano Ronaldo play in FIFA Club World Cup?",2025-05-27T17:41:44.178Z,2025-06-14T12:00:00Z,157350.67599,17528.98239,"Yes: 0.1% | No: 100.0%",false
+552988,"Will Andrew Cuomo win Brooklyn in the New York City Mayoral Democratic Primary?",2025-06-16T18:52:11.499174Z,2025-06-24T00:00:00Z,15640.276335,24522.27437,"Yes: 0.1% | No: 100.0%",false
+552987,"Will Andrew Cuomo win The Bronx in the New York City Mayoral Democratic Primary?",2025-06-16T18:52:15.554477Z,2025-06-24T00:00:00Z,15617.881804,13488.59055,"Yes: 99.7% | No: 0.3%",false
+547753,"Will Donald Trump issue 40 or more executive orders in June?",2025-05-27T20:02:53.723569Z,2025-06-30T12:00:00Z,15323.956557,901378.8606,"Yes: 0.1% | No: 100.0%",false
+544935,"Will the NYC Mayoral Democratic Primary be decided in round 10?",2025-05-16T14:44:48.208005Z,2025-06-24T12:00:00Z,152971.127859,14367.09984,"Yes: 0.1% | No: 100.0%",false
+549327,"Will the chopsticks catch SpaceX Starship Flight Test 10 Superheavy booster?",2025-06-02T21:33:01.953Z,2025-06-30T00:00:00Z,14724.615768,1475.9427,"Yes: 53.0% | No: 47.0%",false
+544932,"Will the NYC Mayoral Democratic Primary be decided in round 7?",2025-05-16T14:44:44.131352Z,2025-06-24T12:00:00Z,143233.526747,3618.5153,"Yes: 0.1% | No: 100.0%",false
+544933,"Will the NYC Mayoral Democratic Primary be decided in round 8?",2025-05-16T14:44:47.953235Z,2025-06-24T12:00:00Z,142071.067784,8628.71528,"Yes: 0.1% | No: 100.0%",false
+552033,"Zohran Mamdani gets the most first-choice votes in the 2025 New York City Mayoral Democratic Primary?",2025-06-13T18:39:24.075985Z,2025-06-24T00:00:00Z,1406083.554878,149884.8717,"Yes: 99.8% | No: 0.3%",false
+552011,"Will Scott Stringer finish third in the 2025 New York City Mayoral Democratic Primary?",2025-06-12T21:24:30.670263Z,2025-06-24T00:00:00Z,14052.585543,8991.56944,"Yes: 0.1% | No: 100.0%",false
+544934,"Will the NYC Mayoral Democratic Primary be decided in round 9?",2025-05-16T14:44:49.166626Z,2025-06-24T12:00:00Z,140371.259073,5362.70751,"Yes: 0.1% | No: 100.0%",false
+544926,"Will the NYC Mayoral Democratic Primary be decided in round 1?",2025-05-16T14:44:38.496287Z,2025-06-24T12:00:00Z,138301.703024,7371.42954,"Yes: 0.1% | No: 99.9%",false
+552048,"Will Andrew Cuomo’s RCV margin of victory be greater than 9% in the New York City Mayoral Democratic Primary?",2025-06-12T22:55:06.620922Z,2025-06-24T00:00:00Z,129279.042872,10179.32454,"Yes: 0.1% | No: 100.0%",false
+544931,"Will the NYC Mayoral Democratic Primary be decided in round 6?",2025-05-16T14:44:44.385264Z,2025-06-24T12:00:00Z,127883.151112,7976.54972,"Yes: 0.1% | No: 100.0%",false
+544930,"Will the NYC Mayoral Democratic Primary be decided in round 5?",2025-05-16T14:44:44.638526Z,2025-06-24T12:00:00Z,126505.316099,9025.37705,"Yes: 0.1% | No: 100.0%",false
+544940,"Will Andrew Cuomo’s RCV margin of victory be less than 5%?",2025-05-16T14:44:53.252844Z,2025-06-24T12:00:00Z,125898.385881,77132.10462,"Yes: 99.9% | No: 0.1%",false
+554575,"Will Brad Lander’s vote share be between 12% and 15% in the first round of the NYC Democratic mayoral primary?",2025-06-20T22:45:38.984652Z,2025-06-24T00:00:00Z,12560.500804,3961.84062,"Yes: 0.1% | No: 100.0%",false
+544936,"Will the NYC Mayoral Democratic Primary be decided in round 11?",2025-05-16T14:44:48.913024Z,2025-06-24T12:00:00Z,121551.647301,8348.54846,"Yes: 0.1% | No: 100.0%",false
+552053,"Will Zohran Mamdani’s RCV margin of victory be between 3% and 6% in the New York City Mayoral Democratic Primary?",2025-06-12T22:55:12.892335Z,2025-06-24T00:00:00Z,113261.639845,8815.41646,"Yes: 0.1% | No: 100.0%",false
+551965,"Will Iran enrich uranium to 90% before August?",2025-06-12T19:40:52.754837Z,2025-06-30T00:00:00Z,110897.3883,15591.9959,"Yes: 2.0% | No: 98.0%",false
+552015,"Will Whitney Tilson finish third in the 2025 New York City Mayoral Democratic Primary?",2025-06-12T21:24:32.73757Z,2025-06-24T00:00:00Z,10919.5375,14716.6171,"Yes: 0.3% | No: 99.8%",false
+552016,"Will Paperboy Prince finish third in the 2025 New York City Mayoral Democratic Primary?",2025-06-12T21:24:30.923204Z,2025-06-24T00:00:00Z,10825.1205,19927.7911,"Yes: 0.3% | No: 99.8%",false
+554536,"Will Andrew Cuomo's first round margin of victory be between 15% and 20%?",2025-06-20T22:48:42.812386Z,2025-06-24T00:00:00Z,10823.814422,3509.8754,"Yes: 1.1% | No: 98.9%",false

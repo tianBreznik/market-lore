@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const fetch = (...args) => import("node-fetch").then(({ default: f }) => f(...args));
 const path = require("path");
-const { DeepSeek } = require('deepseek');
+const { InferenceClient } = require("@huggingface/inference");
 const fs = require('fs');
 
 // Helper to format outcome summary
@@ -13,6 +13,84 @@ function formatOutcomesSummary(market) {
         const percent = price !== undefined ? (parseFloat(price) * 100).toFixed(1) + '%' : '?';
         return `${name}: ${percent}`;
     }).join(' | ');
+}
+
+async function interpretCSVWithHuggingFace(csvContent) {
+    try {
+        const apiKey = process.env.HUGGINGFACE_API_KEY;
+        
+        if (!apiKey) {
+            return 'No Hugging Face API key provided';
+        }
+
+        const client = new InferenceClient(apiKey);
+        
+        const prompt = `Based on this Polymarket prediction markets data, write an engaging story about what's happening in the prediction markets world:
+
+${csvContent}
+
+Write a creative narrative that includes:
+- What types of events people are betting on
+- The most popular markets and why they're interesting
+- Any surprising trends or patterns
+- What this tells us about current events and public sentiment
+
+Make it engaging and story-like, not just a dry analysis.`;
+
+        const chatCompletion = await client.chatCompletion({
+            provider: "hf-inference",
+            model: "HuggingFaceTB/SmolLM3-3B",
+            messages: [
+                {
+                    role: "user",
+                    content: prompt,
+                },
+            ],
+        });
+
+        console.log('Full API response:', JSON.stringify(chatCompletion, null, 2));
+        
+        if (chatCompletion.choices && chatCompletion.choices[0] && chatCompletion.choices[0].message) {
+            return chatCompletion.choices[0].message.content;
+        }
+        
+        return 'No response generated from API';
+    } catch (error) {
+        console.error('Hugging Face API error:', error);
+        return `Error calling Hugging Face API: ${error.message}`;
+    }
+}
+
+function generateBasicStats(markets) {
+    if (!markets || markets.length === 0) {
+        return "No markets data available for analysis.";
+    }
+    
+    const totalMarkets = markets.length;
+    const totalVolume = markets.reduce((sum, m) => sum + parseFloat(m.volume || 0), 0);
+    const avgVolume = totalVolume / totalMarkets;
+    
+    const highestVolumeMarket = markets.reduce((max, m) => 
+        parseFloat(m.volume || 0) > parseFloat(max.volume || 0) ? m : max, markets[0]);
+    
+    const yesNoMarkets = markets.filter(m => 
+        m.outcomes_array && 
+        m.outcomes_array.some(o => o.toLowerCase() === 'yes') &&
+        m.outcomes_array.some(o => o.toLowerCase() === 'no')
+    );
+    
+    const multiOutcomeMarkets = markets.filter(m => 
+        m.outcomes_array && m.outcomes_array.length > 2
+    );
+    
+    return `Market Analysis Summary:
+- Total Markets: ${totalMarkets}
+- Total Volume: $${totalVolume.toLocaleString()}
+- Average Volume: $${avgVolume.toLocaleString()}
+- Highest Volume Market: "${highestVolumeMarket.question}" ($${parseFloat(highestVolumeMarket.volume || 0).toLocaleString()})
+- Yes/No Markets: ${yesNoMarkets.length}
+- Multi-Outcome Markets: ${multiOutcomeMarkets.length}
+- Date Range: ${markets[0]?.start_date} to ${markets[0]?.endDate}`;
 }
 
 async function fetchAndSaveMarketsCSV() {
@@ -64,6 +142,26 @@ async function fetchAndSaveMarketsCSV() {
         });
         fs.writeFileSync('markets.csv', rows.join('\n'), 'utf8');
         console.log('markets.csv updated');
+        
+        // Send CSV to Hugging Face for interpretation
+        try {
+            const csvContent = rows.join('\n');
+            // Skip Hugging Face if no API key or if disabled
+            if (process.env.HUGGINGFACE_API_KEY && process.env.HUGGINGFACE_API_KEY !== 'hf_...') {
+                const huggingFaceResponse = await interpretCSVWithHuggingFace(csvContent);
+                console.log('Hugging Face interpretation:', huggingFaceResponse);
+            } else {
+                console.log('Hugging Face analysis skipped - no valid API key provided');
+                // Generate basic stats instead
+                const basicStats = generateBasicStats(markets);
+                console.log('Basic market analysis:', basicStats);
+            }
+        } catch (huggingFaceErr) {
+            console.error('Error calling Hugging Face:', huggingFaceErr);
+            // Fallback to basic stats
+            const basicStats = generateBasicStats(markets);
+            console.log('Basic market analysis (fallback):', basicStats);
+        }
     } catch (err) {
         console.error('Error generating CSV:', err);
     }
