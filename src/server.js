@@ -25,17 +25,15 @@ async function interpretCSVWithHuggingFace(csvContent) {
 
         const client = new InferenceClient(apiKey);
         
-        const prompt = `Based on this Polymarket prediction markets data, write an engaging story about what's happening in the prediction markets world:
+        const prompt = `Based on this Polymarket prediction markets data, write an immersed engaging story about what's happening in the prediction markets world, 
+        with some naivete about the severity of the impplications of the predictions about the state of the world. As if you are anxious about it and could easily believe conspiracy theories.
 
 ${csvContent}
 
-Write a creative narrative that includes:
-- What types of events people are betting on
-- The most popular markets and why they're interesting
-- Any surprising trends or patterns
-- What this tells us about current events and public sentiment
+Do not mention anything about your process or analysing the data, just output the story/essay/blog post.
+Also output an "anxiety score" between 0 and 100, based on how scared or anxious your own extrapolations from the data make you feel.
 
-Make it engaging and story-like, not just a dry analysis.`;
+Make it engaging and story-like, like an essay or an amateur blog post, opinionated and full of implications,not just a dry analysis.`;
 
         const chatCompletion = await client.chatCompletion({
             provider: "hf-inference",
@@ -145,22 +143,20 @@ async function fetchAndSaveMarketsCSV() {
         
         // Send CSV to Hugging Face for interpretation
         try {
-            const csvContent = rows.join('\n');
-            // Skip Hugging Face if no API key or if disabled
-            if (process.env.HUGGINGFACE_API_KEY && process.env.HUGGINGFACE_API_KEY !== 'hf_...') {
-                const huggingFaceResponse = await interpretCSVWithHuggingFace(csvContent);
-                console.log('Hugging Face interpretation:', huggingFaceResponse);
-            } else {
-                console.log('Hugging Face analysis skipped - no valid API key provided');
-                // Generate basic stats instead
-                const basicStats = generateBasicStats(markets);
-                console.log('Basic market analysis:', basicStats);
-            }
+            // const csvContent = rows.join('\n');
+            // if (process.env.HUGGINGFACE_API_KEY && process.env.HUGGINGFACE_API_KEY !== 'hf_...') {
+            //     const huggingFaceResponse = await interpretCSVWithHuggingFace(csvContent);
+            //     console.log('Hugging Face interpretation:', huggingFaceResponse);
+            // } else {
+            //     console.log('Hugging Face analysis skipped - no valid API key provided');
+            //     const basicStats = generateBasicStats(markets);
+            //     console.log('Basic market analysis:', basicStats);
+            // }
+            console.log('Hugging Face analysis skipped (temporarily disabled for debugging).');
         } catch (huggingFaceErr) {
             console.error('Error calling Hugging Face:', huggingFaceErr);
-            // Fallback to basic stats
-            const basicStats = generateBasicStats(markets);
-            console.log('Basic market analysis (fallback):', basicStats);
+            // const basicStats = generateBasicStats(markets);
+            // console.log('Basic market analysis (fallback):', basicStats);
         }
     } catch (err) {
         console.error('Error generating CSV:', err);
@@ -226,12 +222,40 @@ app.get("/api/markets", async (req, res) => {
     }
 });
 
+app.get("/api/hf-response", async (req, res) => {
+    try {
+        // Read the CSV file
+        const csvContent = fs.readFileSync('markets.csv', 'utf8');
+        // Try Hugging Face analysis (enabled)
+        const response = await interpretCSVWithHuggingFace(csvContent);
+        res.json({ response });
+    } catch (err) {
+        // Fallback: basic stats
+        try {
+            const csvContent = fs.readFileSync('markets.csv', 'utf8');
+            const markets = [];
+            const lines = csvContent.split('\n').slice(1); // skip header
+            for (const line of lines) {
+                const [id, question, start_date, end_date, volume, liquidity, outcomes_summary, closed] = line.split(/,(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)/);
+                if (!id) continue;
+                markets.push({
+                    id, question: question?.replace(/^"|"$/g, ''), start_date, end_date, volume, liquidity, outcomes_summary, closed
+                });
+            }
+            const response = generateBasicStats(markets);
+            res.json({ response });
+        } catch (e) {
+            res.json({ response: "No analysis available." });
+        }
+    }
+});
+
 // Run once on startup
 fetchAndSaveMarketsCSV();
 // Schedule to run every 24 hours
 setInterval(fetchAndSaveMarketsCSV, 24 * 60 * 60 * 1000);
 
-const PORT = 3000;
+const PORT = 4000;
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });

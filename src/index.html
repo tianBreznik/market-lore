@@ -6,14 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Polymarket Chance Viewer</title>
     <style>
-        body {
-            font-family: sans-serif;
-            padding: 1rem;
-            background-color: #f5f5f5;
-            font-size: 12px;
+        html, body {
+            background: #fcfcfc;
+            background-size: cover;
         }
         .market {
-            background: white;
+            background: rgba(255,255,255,0.7);
             padding: 0.5rem;
             margin-bottom: 0.5rem;
             border-radius: 4px;
@@ -21,8 +19,22 @@
             border: 1px solid #ddd;
         }
         h1 {
-            font-size: 1.2rem;
+            font-family: Helvetica, Arial, Verdana, sans-serif;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
+            text-align: center;
+            font-weight: bold;
+        }
+        #date-link {
+            color: #0000EE;
+            text-decoration: none;
+        }
+        #date-link:visited {
+            color: #551A8B;
+        }
+        #date-link:hover {
+            color: #551A8B;
+            text-decoration: underline;
         }
         h2 {
             font-size: 0.9rem;
@@ -39,95 +51,95 @@
             border-width: 1.5px;
             border-style: solid;
         }
-        p {
-            margin: 0.2rem 0;
-            font-size: 0.8rem;
+        p, .hf-response {
+            font-family: Helvetica, Arial, Verdana, sans-serif;
+            font-size: 12px;
+        }
+        #markets {
+            display: none;
+        }
+        #hf-container {
+            margin-top: 2rem;
+            background: #fcfcfc;
+            border-radius: 6px;
+            padding: 0;
+            margin-top: 0;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #hf-date {
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        #hf-response.buffering {
+            animation: breathing 2.2s ease-in-out infinite;
+            text-align: center;
+        }
+        @keyframes breathing {
+            0% { opacity: 0.2; }
+            50% { opacity: 1; }
+            100% { opacity: 0.2; }
         }
     </style>
 </head>
 <body>
-<h1>Polymarket Bet Chances</h1>
+<h1 id="date-title"><a id="date-link" href="#"></a></h1>
 <div id="markets"></div>
+<div id="hf-container">
+  <div id="hf-response" class="hf-response buffering">thinking about the state of the world...</div>
+</div>
 
 <script>
-    const POLYMARKET_API = "http://localhost:3000/api/markets";
+// Remove updateBackground and setInterval code
+</script>
 
-    async function fetchMarkets() {
-        const response = await fetch(POLYMARKET_API);
-        const data = await response.json();
-        console.log("Raw markets from API:", data);
-        return data;
-    }
+<script>
+    // Hide markets, show Hugging Face response
+    document.getElementById('markets').style.display = 'none';
+    // Set current date in h1
+    const dateLink = document.getElementById('date-link');
+    const now = new Date();
+    dateLink.textContent = now.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+    dateLink.href = `#${now.toISOString().split('T')[0]}`;
 
-    function formatProbability(prob) {
-        return (parseFloat(prob) * 100).toFixed(1) + "%";
-    }
-
-    function renderMarkets(markets) {
-        const container = document.getElementById("markets");
-        container.innerHTML = "";
-        console.log("markets from API:", markets);
-
-        const filtered = markets.filter(m => m.outcome_prices && m.outcome_prices.length > 0);
-
-        if (filtered.length === 0) {
-            container.innerHTML = "<p>No reef r4levant markets found.</p>";
-            return;
-        }
-
-        // Sort markets by volume descending before rendering
-        filtered.sort((a, b) => parseFloat(b.volume || 0) - parseFloat(a.volume || 0));
-
-        filtered.forEach(market => {
-            const div = document.createElement("div");
-            div.className = "market";
-
-            console.log("market:", market);
-            const title = document.createElement("h2");
-            title.textContent = market.title || market.question || "Untitled Market";
-            div.appendChild(title);
-
-            const start = new Date(market.start_date).toLocaleString();
-            const end = market.endDate ? new Date(market.endDate).toLocaleString() : "?";
-            const dateLine = document.createElement("p");
-            dateLine.textContent = `Start: ${start} | End: ${end}`;
-            div.appendChild(dateLine);
-
-            const volume = document.createElement("p");
-            const volumeNum = parseFloat(market.volume || 0);
-            volume.textContent = `Volume: $${volumeNum.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
-            div.appendChild(volume);
-
-            market.outcome_prices.forEach((price, index) => {
-                const p = document.createElement("p");
-                p.className = "outcome";
-                let outcomeName = market.outcomes_array && market.outcomes_array[index] ? market.outcomes_array[index] : `Outcome ${index}`;
-                p.textContent = `${outcomeName}: ${formatProbability(price)}`;
-                if (outcomeName.toLowerCase() === "yes") {
-                    p.style.backgroundColor = "#39ff14"; // neon green
-                    p.style.borderColor = "#0a3c0a"; // dark green edge
-                    p.style.boxShadow = "0 0 4px 1px #39ff1488";
-                } else if (outcomeName.toLowerCase() === "no") {
-                    p.style.backgroundColor = "#ff073a"; // neon red
-                    p.style.borderColor = "#3c0a0a"; // dark red edge
-                    p.style.boxShadow = "0 0 4px 1px #ff073a88";
-                } else {
-                    p.style.backgroundColor = "#00cfff"; // neon blue for other outcomes
-                    p.style.borderColor = "#003c4a"; // dark blue edge
-                    p.style.boxShadow = "0 0 4px 1px #00cfff88";
-                }
-                div.appendChild(p);
+    // Fetch Hugging Face response (or fallback)
+    async function fetchHFResponse() {
+        // Show buffering text with animation
+        const hfResp = document.getElementById('hf-response');
+        hfResp.textContent = 'thinking about the state of the world...';
+        hfResp.classList.add('buffering');
+        try {
+            const resp = await fetch('http://localhost:4000/api/hf-response');
+            if (!resp.ok) throw new Error('No response');
+            const data = await resp.json();
+            hfResp.classList.remove('buffering');
+            // Render everything after the first ** marker (omit everything before and the ** itself)
+            let filtered = data.response;
+            const idx = filtered.indexOf('**');
+            if (idx !== -1) {
+                filtered = filtered.substring(idx + 2).trim();
+            }
+            // Remove all ** from the filtered text
+            filtered = filtered.replace(/\*\*/g, '');
+            // Extract and remove 'Anxiety Score: XX%' and everything after it from the text
+            let anxietyScore = null;
+            filtered = filtered.replace(/Anxiety Score: (\d+%)\s*[\s\S]*/i, (match, score) => {
+                anxietyScore = score;
+                return '';
             });
-
-            container.appendChild(div);
-        });
+            // Also remove any stray 'Anxiety Score' mentions left in the text (just in case)
+            filtered = filtered.replace(/Anxiety Score:? ?\d+(?:%|\/100)?/gi, '');
+            hfResp.innerHTML = filtered
+                .split(/\n\n+/)
+                .map(par => `<p>${par}</p>`).join('');
+            // anxietyScore variable is available for later use
+        } catch (e) {
+            hfResp.classList.remove('buffering');
+            hfResp.innerHTML = '<p>Unable to load Hugging Face analysis at this time.</p>';
+        }
     }
-
-    // Run on page load
-    fetchMarkets().then(renderMarkets).catch(err => {
-        console.error("Error fetching data:", err);
-        document.getElementById("markets").textContent = "Failed to load data.";
-    });
+    fetchHFResponse();
 </script>
 </body>
 </html>
