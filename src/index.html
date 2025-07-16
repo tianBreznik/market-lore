@@ -84,7 +84,11 @@
     </style>
 </head>
 <body>
-<h1 id="date-title"><a id="date-link" href="#"></a></h1>
+<h1 id="date-title" style="display:flex;align-items:center;justify-content:center;gap:1.5em;">
+  <span id="left-arrow" style="cursor:pointer;user-select:none;color:#0000EE;font-size:0.6rem;vertical-align:middle;">&#9664;</span>
+  <span id="date-text" style="color:#0000EE;font-family:Helvetica,Arial,Verdana,sans-serif;font-size:32px;font-weight:normal;"></span>
+  <span id="right-arrow" style="cursor:pointer;user-select:none;color:#0000EE;font-size:0.6rem;vertical-align:middle;">&#9654;</span>
+</h1>
 <div id="markets"></div>
 <div id="hf-container">
   <div id="hf-response" class="hf-response buffering">thinking about the state of the world...</div>
@@ -97,49 +101,106 @@
 <script>
     // Hide markets, show Hugging Face response
     document.getElementById('markets').style.display = 'none';
-    // Set current date in h1
-    const dateLink = document.getElementById('date-link');
-    const now = new Date();
-    dateLink.textContent = now.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
-    dateLink.href = `#${now.toISOString().split('T')[0]}`;
 
-    // Fetch Hugging Face response (or fallback)
-    async function fetchHFResponse() {
-        // Show buffering text with animation
-        const hfResp = document.getElementById('hf-response');
+    const dateText = document.getElementById('date-text');
+    const leftArrow = document.getElementById('left-arrow');
+    const rightArrow = document.getElementById('right-arrow');
+    const hfResp = document.getElementById('hf-response');
+
+    let availableDates = [];
+    let currentDateIdx = -1;
+    let todayStr = new Date().toISOString().split('T')[0];
+    let viewingDate = todayStr;
+
+    async function fetchAvailableDates() {
+        const resp = await fetch('http://localhost:4000/api/hf-dates');
+        const data = await resp.json();
+        availableDates = data.dates;
+    }
+
+    function formatDate(dateStr) {
+        const d = new Date(dateStr);
+        return d.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+    }
+
+    async function fetchHFResponseForDate(dateStr) {
         hfResp.textContent = 'thinking about the state of the world...';
         hfResp.classList.add('buffering');
         try {
-            const resp = await fetch('http://localhost:4000/api/hf-response');
+            console.log("About to fetch /api/hf-response")
+            const resp = await fetch(`http://localhost:4000/api/hf-response?date=${dateStr}`);
             if (!resp.ok) throw new Error('No response');
             const data = await resp.json();
             hfResp.classList.remove('buffering');
-            // Render everything after the first ** marker (omit everything before and the ** itself)
             let filtered = data.response;
-            const idx = filtered.indexOf('**');
-            if (idx !== -1) {
-                filtered = filtered.substring(idx + 2).trim();
-            }
-            // Remove all ** from the filtered text
-            filtered = filtered.replace(/\*\*/g, '');
-            // Extract and remove 'Anxiety Score: XX%' and everything after it from the text
-            let anxietyScore = null;
-            filtered = filtered.replace(/Anxiety Score: (\d+%)\s*[\s\S]*/i, (match, score) => {
-                anxietyScore = score;
-                return '';
-            });
-            // Also remove any stray 'Anxiety Score' mentions left in the text (just in case)
-            filtered = filtered.replace(/Anxiety Score:? ?\d+(?:%|\/100)?/gi, '');
             hfResp.innerHTML = filtered
                 .split(/\n\n+/)
                 .map(par => `<p>${par}</p>`).join('');
-            // anxietyScore variable is available for later use
+            // Optionally, display anxietyScore somewhere else if needed
         } catch (e) {
             hfResp.classList.remove('buffering');
             hfResp.innerHTML = '<p>Unable to load Hugging Face analysis at this time.</p>';
         }
     }
-    fetchHFResponse();
+
+    function updateDateNav() {
+        dateText.textContent = formatDate(viewingDate);
+        // Enable/disable arrows
+        if (availableDates.length > 1 && currentDateIdx > 0) {
+            leftArrow.style.visibility = 'visible';
+        } else {
+            leftArrow.style.visibility = 'hidden';
+        }
+        if (availableDates.length > 1 && currentDateIdx < availableDates.length - 1) {
+            rightArrow.style.visibility = 'visible';
+        } else {
+            rightArrow.style.visibility = 'hidden';
+        }
+    }
+
+    leftArrow.addEventListener('click', async () => {
+        if (availableDates.length === 0) {
+            await fetchAvailableDates();
+        }
+        if (availableDates.length > 1 && currentDateIdx > 0) {
+            currentDateIdx--;
+            viewingDate = availableDates[currentDateIdx];
+            updateDateNav();
+            fetchHFResponseForDate(viewingDate);
+        }
+    });
+    rightArrow.addEventListener('click', async () => {
+        if (availableDates.length === 0) {
+            await fetchAvailableDates();
+        }
+        if (availableDates.length > 1 && currentDateIdx < availableDates.length - 1) {
+            currentDateIdx++;
+            viewingDate = availableDates[currentDateIdx];
+            updateDateNav();
+            fetchHFResponseForDate(viewingDate);
+        }
+    });
+
+    // On initial load, just show today's prediction and date
+    // dateText.textContent = formatDate(todayStr);
+    // fetchHFResponseForDate(todayStr);
+    // Only load available dates and enable navigation if user clicks an arrow
+
+    async function initializeDateNav() {
+        await fetchAvailableDates();
+        // Find today's index, or default to the last available date
+        currentDateIdx = availableDates.indexOf(todayStr);
+        if (currentDateIdx === -1 && availableDates.length > 0) {
+            currentDateIdx = availableDates.length - 1;
+            viewingDate = availableDates[currentDateIdx];
+        } else {
+            viewingDate = todayStr;
+        }
+        updateDateNav();
+        fetchHFResponseForDate(viewingDate);
+    }
+
+    initializeDateNav();
 </script>
 </body>
 </html>

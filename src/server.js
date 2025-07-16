@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const cors = require("cors");
 const fetch = (...args) => import("node-fetch").then(({ default: f }) => f(...args));
@@ -14,26 +15,18 @@ function formatOutcomesSummary(market) {
         return `${name}: ${percent}`;
     }).join(' | ');
 }
-
-async function interpretCSVWithHuggingFace(csvContent) {
+console.log(process.env.HUGGINGFACE_API_KEY);
+async function interpretCSVWithHuggingFace(prompt) {
+    console.log("API key at call time:", process.env.HUGGINGFACE_API_KEY);
     try {
         const apiKey = process.env.HUGGINGFACE_API_KEY;
+        console.log("blalbablalsba")
         
         if (!apiKey) {
             return 'No Hugging Face API key provided';
         }
 
         const client = new InferenceClient(apiKey);
-        
-        const prompt = `Based on this Polymarket prediction markets data, write an immersed engaging story about what's happening in the prediction markets world, 
-        with some naivete about the severity of the impplications of the predictions about the state of the world. As if you are anxious about it and could easily believe conspiracy theories.
-
-${csvContent}
-
-Do not mention anything about your process or analysing the data, just output the story/essay/blog post.
-Also output an "anxiety score" between 0 and 100, based on how scared or anxious your own extrapolations from the data make you feel.
-
-Make it engaging and story-like, like an essay or an amateur blog post, opinionated and full of implications,not just a dry analysis.`;
 
         const chatCompletion = await client.chatCompletion({
             provider: "hf-inference",
@@ -140,24 +133,7 @@ async function fetchAndSaveMarketsCSV() {
         });
         fs.writeFileSync('markets.csv', rows.join('\n'), 'utf8');
         console.log('markets.csv updated');
-        
-        // Send CSV to Hugging Face for interpretation
-        try {
-            // const csvContent = rows.join('\n');
-            // if (process.env.HUGGINGFACE_API_KEY && process.env.HUGGINGFACE_API_KEY !== 'hf_...') {
-            //     const huggingFaceResponse = await interpretCSVWithHuggingFace(csvContent);
-            //     console.log('Hugging Face interpretation:', huggingFaceResponse);
-            // } else {
-            //     console.log('Hugging Face analysis skipped - no valid API key provided');
-            //     const basicStats = generateBasicStats(markets);
-            //     console.log('Basic market analysis:', basicStats);
-            // }
-            console.log('Hugging Face analysis skipped (temporarily disabled for debugging).');
-        } catch (huggingFaceErr) {
-            console.error('Error calling Hugging Face:', huggingFaceErr);
-            // const basicStats = generateBasicStats(markets);
-            // console.log('Basic market analysis (fallback):', basicStats);
-        }
+
     } catch (err) {
         console.error('Error generating CSV:', err);
     }
@@ -166,6 +142,11 @@ async function fetchAndSaveMarketsCSV() {
 const app = express();
 app.use(cors());
 app.use(express.static(path.join(__dirname)));
+
+const PREDICTIONS_DIR = path.join(__dirname, 'predictions');
+if (!fs.existsSync(PREDICTIONS_DIR)) {
+    fs.mkdirSync(PREDICTIONS_DIR);
+}
 
 app.get("/api/markets", async (req, res) => {
     try {
@@ -222,13 +203,239 @@ app.get("/api/markets", async (req, res) => {
     }
 });
 
+console.log("glbasd");
 app.get("/api/hf-response", async (req, res) => {
+    console.log("hf-response endpoint called", req.query);
     try {
+        // Determine date to serve
+        let dateStr = req.query.date;
+        if (!dateStr) {
+            dateStr = new Date().toISOString().split('T')[0];
+        }
+        const predictionPath = path.join(PREDICTIONS_DIR, `${dateStr}.json`);
+        // If file exists, serve it
+        if (fs.existsSync(predictionPath)) {
+            const data = JSON.parse(fs.readFileSync(predictionPath, 'utf8'));
+            return res.json(data);
+        }
+        // Otherwise, generate for today only
+        if (dateStr !== new Date().toISOString().split('T')[0]) {
+            return res.status(404).json({ error: 'No prediction for this date.' });
+        }
         // Read the CSV file
         const csvContent = fs.readFileSync('markets.csv', 'utf8');
-        // Try Hugging Face analysis (enabled)
-        const response = await interpretCSVWithHuggingFace(csvContent);
-        res.json({ response });
+
+        // Find previous date's anxiety score (as a two-digit number)
+        let previousAnxietyScore = null;
+        try {
+            const files = fs.readdirSync(PREDICTIONS_DIR)
+                .filter(f => f.endsWith('.json'))
+                .map(f => f.replace('.json', ''))
+                .sort();
+            const prevDate = files.filter(d => d < dateStr).pop();
+            if (prevDate) {
+                const prevData = JSON.parse(fs.readFileSync(path.join(PREDICTIONS_DIR, prevDate + '.json'), 'utf8'));
+                let score = prevData.anxietyScore;
+                if (typeof score === 'number' && !isNaN(score)) {
+                    previousAnxietyScore = Math.round(score * 100);
+                    if (previousAnxietyScore > 100) previousAnxietyScore = 100;
+                    if (previousAnxietyScore < 0) previousAnxietyScore = 0;
+                }
+            }
+        } catch (e) {
+            console.log('Could not read previous anxiety score:', e);
+        }
+
+        // Build the prompt
+        let previousScoreText = '';
+        if (previousAnxietyScore !== null && !isNaN(previousAnxietyScore)) {
+            previousScoreText = `The previous day's anxiety score was ${previousAnxietyScore}. `;
+        }
+        const prompt = `${previousScoreText}Based on this Polymarket prediction markets data, write an immersed engaging story about what's happening in the prediction markets world. 
+        Approach this with a balanced, thoughtful perspective - like someone who's curious about market trends but maintains a calm, measured outlook on the world.
+
+${csvContent}
+
+Do not mention anything about your process or analysing the data, just output the story/essay/blog post.
+
+IMPORTANT: Your anxiety score should reflect YOUR OWN emotional state based on how you interpret these predictions. Consider:
+- If the previous day's anxiety was high (like 95), you should feel more calm and balanced, recognizing that markets often overreact
+- If the previous day's anxiety was low (like 10), you should feel optimistic and confident about the future
+- When interpreting predictions: look for positive developments, technological progress, and signs of human resilience
+- Give less weight to negative interpretations - markets can be volatile and don't always reflect reality
+- Focus on the bigger picture: humanity has faced challenges before and adapted
+- Your anxiety score represents how calm and optimistic YOU feel after analyzing all this data
+
+Remember: Be mellow and measured in your tone. Don't catastrophize or jump to worst-case scenarios. Look for silver linings and reasons for hope.
+
+At the very end, on a new line, output exactly: Anxiety Score: XX% (where XX is your anxiety level between 0 and 100). Do not use any other phrasing for the anxiety score. Do not use any other words or sentences after the 'Anxiety Score: XX%' line. It must be the very last line.
+
+Make it engaging and story-like, like an essay or an amateur blog post, but with a calm, thoughtful tone that balances curiosity with optimism.`;
+
+        // Call Hugging Face with the prompt
+        console.log("will call");
+        const response = await interpretCSVWithHuggingFace(prompt);
+        
+        // Robust filtering function to remove thinking sections
+        function filterThinkingSections(text) {
+            let filtered = text;
+            
+            // Log original response for debugging
+            console.log('Before filtering - response starts with:', filtered.substring(0, 100));
+            console.log('Original response length:', filtered.length);
+            
+            // Pattern 1: Standard <think>...</think> tags
+            const thinkPattern = /<think>[\s\S]*?<\/think>/gi;
+            if (thinkPattern.test(filtered)) {
+                console.log('Found <think>...</think> pattern');
+                filtered = filtered.replace(thinkPattern, '');
+            }
+            
+            // Pattern 2: Remove everything from start up to and including </think> (robust, case-insensitive)
+            console.log('DEBUG: Checking for </think> tag...');
+            console.log('DEBUG: Response contains </think>?', filtered.includes('</think>'));
+            console.log('DEBUG: Response contains </THINK>?', filtered.includes('</THINK>'));
+            
+            const thinkEndMatch = filtered.toLowerCase().match(/<\/think\s*>/);
+            console.log('DEBUG: thinkEndMatch result:', thinkEndMatch);
+            
+            if (thinkEndMatch) {
+                const thinkEndIndex = filtered.toLowerCase().indexOf(thinkEndMatch[0]) + thinkEndMatch[0].length;
+                console.log('DEBUG: thinkEndIndex:', thinkEndIndex);
+                filtered = filtered.substring(thinkEndIndex).trim();
+                console.log('Filtered out <think> section. New response starts:', filtered.substring(0, 100));
+            } else {
+                console.log('DEBUG: No </think> tag found in response');
+            }
+            
+            // Pattern 3: Thinking sections with different formatting
+            const thinkingPatterns = [
+                /<thinking>[\s\S]*?<\/thinking>/gi,
+                /<reasoning>[\s\S]*?<\/reasoning>/gi,
+                /<analysis>[\s\S]*?<\/analysis>/gi,
+                /<process>[\s\S]*?<\/process>/gi,
+                /<plan>[\s\S]*?<\/plan>/gi,
+                /<step>[\s\S]*?<\/step>/gi,
+                /<thought>[\s\S]*?<\/thought>/gi
+            ];
+            
+            thinkingPatterns.forEach((pattern, index) => {
+                if (pattern.test(filtered)) {
+                    console.log(`Found thinking pattern ${index + 1}`);
+                    filtered = filtered.replace(pattern, '');
+                }
+            });
+            
+            // Pattern 4: Remove common prefixes that indicate thinking
+            const thinkingPrefixes = [
+                /^[\s]*Let me analyze[\s\S]*?(?=\n\n|\n[A-Z]|$)/gi,
+                /^[\s]*I'll start by[\s\S]*?(?=\n\n|\n[A-Z]|$)/gi,
+                /^[\s]*First, let me[\s\S]*?(?=\n\n|\n[A-Z]|$)/gi,
+                /^[\s]*Let me think[\s\S]*?(?=\n\n|\n[A-Z]|$)/gi,
+                /^[\s]*I need to[\s\S]*?(?=\n\n|\n[A-Z]|$)/gi,
+                /^[\s]*Based on the data[\s\S]*?(?=\n\n|\n[A-Z]|$)/gi
+            ];
+            
+            thinkingPrefixes.forEach((prefix, index) => {
+                if (prefix.test(filtered)) {
+                    console.log(`Found thinking prefix ${index + 1}`);
+                    filtered = filtered.replace(prefix, '');
+                }
+            });
+            
+            // Pattern 5: Remove markdown formatting that might wrap thinking sections
+            filtered = filtered.replace(/^\*\*.*?\*\*\s*/gm, '');
+            filtered = filtered.replace(/^#+\s*.*?\n/gm, '');
+            
+            // Pattern 6: Remove any remaining thinking indicators at the start
+            const thinkingStartIndicators = [
+                /^[\s]*Thinking:[\s\S]*?(?=\n\n|\n[A-Z]|$)/gi,
+                /^[\s]*Analysis:[\s\S]*?(?=\n\n|\n[A-Z]|$)/gi,
+                /^[\s]*Process:[\s\S]*?(?=\n\n|\n[A-Z]|$)/gi,
+                /^[\s]*Let me[\s\S]*?(?=\n\n|\n[A-Z]|$)/gi
+            ];
+            
+            thinkingStartIndicators.forEach((indicator, index) => {
+                if (indicator.test(filtered)) {
+                    console.log(`Found thinking indicator ${index + 1}`);
+                    filtered = filtered.replace(indicator, '');
+                }
+            });
+            
+            // Clean up any extra whitespace
+            filtered = filtered.trim();
+            
+            console.log('After filtering - filtered starts with:', filtered.substring(0, 100));
+            console.log('Filtered response length:', filtered.length);
+            
+            return filtered;
+        }
+        
+        // Apply robust filtering
+        let filtered = filterThinkingSections(response);
+        
+        // Additional cleanup and logging
+        console.log('Filtered response:', filtered);
+        console.log('Contains "Anxiety Score:"?', filtered.includes('Anxiety Score:'));
+        console.log('Contains "anxiety score:"?', filtered.includes('anxiety score:'));
+        console.log('Contains "ANXIETY SCORE:"?', filtered.includes('ANXIETY SCORE:'));
+        
+        // Remove any remaining markdown formatting
+        filtered = filtered.replace(/\*\*/g, '');
+        // Extract anxiety score - find various patterns
+        let anxietyScore = null;
+        // Try 'Anxiety Score: <value>'
+        let anxietyMatch = filtered.match(/Anxiety Score:\s*([\d.]+)(?:%|\/100)?/i);
+        if (!anxietyMatch) {
+            // Try 'anxiety score is <value>%'
+            anxietyMatch = filtered.match(/anxiety score is\s*([\d.]+)%/i);
+        }
+        if (!anxietyMatch) {
+            // Try 'anxiety score\s*([\d.]+)\/100'
+            anxietyMatch = filtered.match(/anxiety score\s*([\d.]+)\/100/i);
+        }
+        if (!anxietyMatch) {
+            // Try 'anxiety is\s*([\d.]+)%'
+            anxietyMatch = filtered.match(/anxiety is\s*([\d.]+)%/i);
+        }
+        if (anxietyMatch) {
+            let rawScore = anxietyMatch[1].trim();
+            if (rawScore.includes('/')) {
+                // Handle fractions like "98/100"
+                const parts = rawScore.split('/');
+                const numerator = parseFloat(parts[0]);
+                const denominator = parseFloat(parts[1]);
+                anxietyScore = numerator / denominator;
+            } else if (rawScore.includes('%')) {
+                // Handle percentages like "98%"
+                const number = parseFloat(rawScore.replace('%', ''));
+                anxietyScore = number / 100;
+            } else {
+                // Handle plain numbers
+                anxietyScore = parseFloat(rawScore);
+            }
+            console.log('Converted anxiety score to float:', anxietyScore);
+        } else {
+            // Fallback: extract the last number between 0 and 100 in the text
+            const allNumbers = Array.from(filtered.matchAll(/([0-9]{1,3}(?:\.[0-9]+)?)/g)).map(m => parseFloat(m[1])).filter(n => n >= 0 && n <= 100);
+            if (allNumbers.length > 0) {
+                anxietyScore = allNumbers[allNumbers.length - 1];
+                console.log('Fallback: extracted last plausible anxiety score:', anxietyScore);
+            } else {
+                console.log('No anxiety score found in text');
+            }
+        }
+        // Remove anxiety score and everything after it
+        filtered = filtered.replace(/Anxiety Score: (\d+%)\s*[\s\S]*/i, (match, score) => {
+            return '';
+        });
+        // Also remove any stray anxiety score mentions
+        filtered = filtered.replace(/Anxiety Score:? ?\d+(?:%|\/100)?/gi, '');
+        console.log('Final anxiety score:', anxietyScore);
+        console.log('Final filtered response length:', filtered.length);
+        // Save to file (filtered only)
+        fs.writeFileSync(predictionPath, JSON.stringify({ response: filtered, anxietyScore, date: dateStr }), 'utf8');
+        res.json({ response: filtered, anxietyScore, date: dateStr });
     } catch (err) {
         // Fallback: basic stats
         try {
@@ -236,7 +443,7 @@ app.get("/api/hf-response", async (req, res) => {
             const markets = [];
             const lines = csvContent.split('\n').slice(1); // skip header
             for (const line of lines) {
-                const [id, question, start_date, end_date, volume, liquidity, outcomes_summary, closed] = line.split(/,(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)/);
+                const [id, question, start_date, end_date, volume, liquidity, outcomes_summary, closed] = line.split(/,(?=(?:[^"]*\"[^"]*\")*[^"]*$)/);
                 if (!id) continue;
                 markets.push({
                     id, question: question?.replace(/^"|"$/g, ''), start_date, end_date, volume, liquidity, outcomes_summary, closed
@@ -247,6 +454,20 @@ app.get("/api/hf-response", async (req, res) => {
         } catch (e) {
             res.json({ response: "No analysis available." });
         }
+    }
+});
+
+// Endpoint to list available prediction dates
+app.get("/api/hf-dates", (req, res) => {
+    try {
+        const files = fs.readdirSync(PREDICTIONS_DIR);
+        const dates = files
+            .filter(f => f.endsWith('.json'))
+            .map(f => f.replace('.json', ''))
+            .sort();
+        res.json({ dates });
+    } catch (err) {
+        res.status(500).json({ error: 'Could not list prediction dates.' });
     }
 });
 
