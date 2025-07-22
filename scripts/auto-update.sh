@@ -99,14 +99,21 @@ generate_prediction() {
         # Save prediction for static site
         if [ -n "$anxiety_score" ] && [ -n "$date" ]; then
             log "INFO" "Saving prediction for static site..."
+            # Create a temporary JSON file to avoid shell escaping issues
+            cat > /tmp/prediction_data.json << EOF
+{
+    "anxietyScore": $anxiety_score,
+    "date": "$date",
+    "response": "$(echo "$response" | sed 's/"/\\"/g')"
+}
+EOF
             node -e "
+                const fs = require('fs');
                 const { savePredictionForStaticSite } = require('./scripts/save-prediction.js');
-                savePredictionForStaticSite({
-                    anxietyScore: parseInt('$anxiety_score'),
-                    date: '$date',
-                    response: '$response'
-                });
+                const data = JSON.parse(fs.readFileSync('/tmp/prediction_data.json', 'utf8'));
+                savePredictionForStaticSite(data);
             " 2>/dev/null || log "WARNING" "Failed to save prediction for static site"
+            rm -f /tmp/prediction_data.json
         fi
         
         return 0
