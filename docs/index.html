@@ -114,11 +114,15 @@
 
     async function fetchAvailableDates() {
         try {
-            // Try to load from GitHub raw content
-            const resp = await fetch('https://raw.githubusercontent.com/tianBreznik/market-lore/main/src/predictions/latest.json');
+            // Get list of available prediction files from GitHub
+            const resp = await fetch('https://api.github.com/repos/tianBreznik/market-lore/contents/src/predictions');
             if (resp.ok) {
-                const data = await resp.json();
-                availableDates = [data.date];
+                const files = await resp.json();
+                // Filter for JSON files and extract dates
+                availableDates = files
+                    .filter(file => file.name.endsWith('.json') && file.name !== 'latest.json')
+                    .map(file => file.name.replace('.json', ''))
+                    .sort(); // Sort chronologically
             } else {
                 // Fallback to today's date
                 availableDates = [todayStr];
@@ -147,15 +151,33 @@
                 if (!latestResp.ok) throw new Error('No response');
                 const data = await latestResp.json();
                 hfResp.classList.remove('buffering');
-                let filtered = data.response;
-                hfResp.innerHTML = filtered
+                // Parse the response properly - it's stored as a JSON string
+                let responseText = data.response;
+                if (typeof responseText === 'string' && responseText.startsWith('{')) {
+                    try {
+                        const parsedResponse = JSON.parse(responseText);
+                        responseText = parsedResponse.response || responseText;
+                    } catch (e) {
+                        // If parsing fails, use the original text
+                    }
+                }
+                hfResp.innerHTML = responseText
                     .split(/\n\n+/)
                     .map(par => `<p>${par}</p>`).join('');
             } else {
                 const data = await resp.json();
                 hfResp.classList.remove('buffering');
-                let filtered = data.response;
-                hfResp.innerHTML = filtered
+                // Parse the response properly - it's stored as a JSON string
+                let responseText = data.response;
+                if (typeof responseText === 'string' && responseText.startsWith('{')) {
+                    try {
+                        const parsedResponse = JSON.parse(responseText);
+                        responseText = parsedResponse.response || responseText;
+                    } catch (e) {
+                        // If parsing fails, use the original text
+                    }
+                }
+                hfResp.innerHTML = responseText
                     .split(/\n\n+/)
                     .map(par => `<p>${par}</p>`).join('');
             }
