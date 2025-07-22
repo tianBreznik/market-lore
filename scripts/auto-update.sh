@@ -96,6 +96,19 @@ generate_prediction() {
         
         log "INFO" "Successfully generated prediction for $date with anxiety score: $anxiety_score"
         
+        # Save prediction for static site
+        if [ -n "$anxiety_score" ] && [ -n "$date" ]; then
+            log "INFO" "Saving prediction for static site..."
+            node -e "
+                const { savePredictionForStaticSite } = require('./scripts/save-prediction.js');
+                savePredictionForStaticSite({
+                    anxietyScore: parseInt('$anxiety_score'),
+                    date: '$date',
+                    response: '$response'
+                });
+            " 2>/dev/null || log "WARNING" "Failed to save prediction for static site"
+        fi
+        
         return 0
     else
         log "ERROR" "Failed to generate prediction from $PREDICTION_ENDPOINT"
