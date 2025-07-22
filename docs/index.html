@@ -113,9 +113,20 @@
     let viewingDate = todayStr;
 
     async function fetchAvailableDates() {
-        const resp = await fetch('http://localhost:4000/api/hf-dates');
-        const data = await resp.json();
-        availableDates = data.dates;
+        try {
+            // Try to load from GitHub raw content
+            const resp = await fetch('https://raw.githubusercontent.com/tianBreznik/market-lore/main/src/predictions/latest.json');
+            if (resp.ok) {
+                const data = await resp.json();
+                availableDates = [data.date];
+            } else {
+                // Fallback to today's date
+                availableDates = [todayStr];
+            }
+        } catch (e) {
+            console.error('Error fetching dates:', e);
+            availableDates = [todayStr];
+        }
     }
 
     function formatDate(dateStr) {
@@ -127,19 +138,31 @@
         hfResp.textContent = 'thinking about the state of the world...';
         hfResp.classList.add('buffering');
         try {
-            console.log("About to fetch /api/hf-response")
-            const resp = await fetch(`http://localhost:4000/api/hf-response?date=${dateStr}`);
-            if (!resp.ok) throw new Error('No response');
-            const data = await resp.json();
-            hfResp.classList.remove('buffering');
-            let filtered = data.response;
-            hfResp.innerHTML = filtered
-                .split(/\n\n+/)
-                .map(par => `<p>${par}</p>`).join('');
-            // Optionally, display anxietyScore somewhere else if needed
+            console.log("About to fetch prediction for date:", dateStr);
+            // Try to load from GitHub raw content
+            const resp = await fetch(`https://raw.githubusercontent.com/tianBreznik/market-lore/main/src/predictions/${dateStr}.json`);
+            if (!resp.ok) {
+                // Fallback to latest prediction
+                const latestResp = await fetch('https://raw.githubusercontent.com/tianBreznik/market-lore/main/src/predictions/latest.json');
+                if (!latestResp.ok) throw new Error('No response');
+                const data = await latestResp.json();
+                hfResp.classList.remove('buffering');
+                let filtered = data.response;
+                hfResp.innerHTML = filtered
+                    .split(/\n\n+/)
+                    .map(par => `<p>${par}</p>`).join('');
+            } else {
+                const data = await resp.json();
+                hfResp.classList.remove('buffering');
+                let filtered = data.response;
+                hfResp.innerHTML = filtered
+                    .split(/\n\n+/)
+                    .map(par => `<p>${par}</p>`).join('');
+            }
         } catch (e) {
+            console.error('Error fetching prediction:', e);
             hfResp.classList.remove('buffering');
-            hfResp.innerHTML = '<p>Unable to load Hugging Face analysis at this time.</p>';
+            hfResp.innerHTML = '<p>Unable to load Hugging Face analysis at this time. Please check back later.</p>';
         }
     }
 
