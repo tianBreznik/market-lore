@@ -222,8 +222,59 @@ app.get("/api/hf-response", async (req, res) => {
         if (dateStr !== new Date().toISOString().split('T')[0]) {
             return res.status(404).json({ error: 'No prediction for this date.' });
         }
-        // Read the CSV file
-        const csvContent = fs.readFileSync('markets.csv', 'utf8');
+        // Read the CSV file and truncate if necessary
+        let csvContent = fs.readFileSync('markets.csv', 'utf8');
+        console.log(`Original CSV content length: ${csvContent.length} characters`);
+        
+        // Truncate CSV content to stay within token limits
+        // Estimate tokens: roughly 4 characters per token, so 60k tokens = ~240k characters
+        const maxChars = 240000; // Conservative limit for 60k tokens
+        if (csvContent.length > maxChars) {
+            console.log(`CSV content too large (${csvContent.length} chars), truncating to ${maxChars} chars`);
+            
+            // Parse CSV to prioritize markets
+            const lines = csvContent.split('\n');
+            const header = lines[0];
+            const dataLines = lines.slice(1).filter(line => line.trim());
+            
+            // Parse data lines to extract volume and date info
+            const marketData = dataLines.map(line => {
+                const parts = line.split(',');
+                if (parts.length >= 6) {
+                    const volume = parseFloat(parts[4]) || 0;
+                    const endDate = parts[3];
+                    const question = parts[1];
+                    return { line, volume, endDate, question };
+                }
+                return { line, volume: 0, endDate: '', question: '' };
+            });
+            
+            // Sort by volume (highest first) and recency
+            marketData.sort((a, b) => {
+                // First by volume (descending)
+                if (b.volume !== a.volume) {
+                    return b.volume - a.volume;
+                }
+                // Then by end date (most recent first)
+                return new Date(b.endDate) - new Date(a.endDate);
+            });
+            
+            // Calculate how many lines we can keep
+            const headerLength = header.length + 1; // +1 for newline
+            const availableChars = maxChars - headerLength;
+            const avgLineLength = marketData.reduce((sum, item) => sum + item.line.length + 1, 0) / marketData.length;
+            const maxLines = Math.floor(availableChars / avgLineLength);
+            
+            // Take the top N most relevant markets
+            const topMarkets = marketData.slice(0, maxLines);
+            const truncatedLines = topMarkets.map(item => item.line);
+            csvContent = header + '\n' + truncatedLines.join('\n');
+            
+            console.log(`Truncated to ${maxLines} highest-volume markets (${csvContent.length} chars total)`);
+            console.log(`Top markets by volume: ${topMarkets.slice(0, 3).map(item => `"${item.question.substring(0, 50)}..." ($${item.volume.toLocaleString()})`).join(', ')}`);
+        } else {
+            console.log(`CSV content within limits (${csvContent.length} chars), no truncation needed`);
+        }
 
         // Find previous date's anxiety score (as a two-digit number)
         let previousAnxietyScore = null;

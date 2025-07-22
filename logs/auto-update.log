@@ -1,0 +1,42 @@
+2025-07-22 21:29:27 [INFO] Starting MarketLore auto-update with action: test
+2025-07-22 21:29:27 [INFO] Running in test mode...
+2025-07-22 21:29:27 [INFO] Checking if server is running...
+2025-07-22 21:29:28 [ERROR] Server is not running at http://localhost:4000
+2025-07-22 21:29:28 [ERROR] Please start the server with: node src/server.js
+2025-07-22 21:29:28 [ERROR] Test failed
+2025-07-22 21:30:03 [INFO] Starting MarketLore auto-update with action: test
+2025-07-22 21:30:03 [INFO] Running in test mode...
+2025-07-22 21:30:03 [INFO] Checking if server is running...
+2025-07-22 21:30:03 [INFO] Server is running at http://localhost:4000
+2025-07-22 21:30:03 [INFO] Fetching latest market data from Polymarket...
+2025-07-22 21:30:04 [INFO] Successfully fetched market data:        1 lines
+2025-07-22 21:30:04 [INFO] Generating new prediction...
+2025-07-22 21:30:05 [INFO] Successfully generated prediction for 2025-07-22 with anxiety score: 36
+2025-07-22 21:30:05 [INFO] Test completed successfully
+2025-07-22 21:30:05 [INFO] === Auto-Update Summary ===
+2025-07-22 21:30:05 [INFO] Repository: /Users/Tian/WebstormProjects/marketlore
+2025-07-22 21:30:05 [INFO] Server URL: http://localhost:4000
+2025-07-22 21:30:05 [INFO] Markets file: /Users/Tian/WebstormProjects/marketlore/markets.csv
+2025-07-22 21:30:05 [INFO] Log file: /Users/Tian/WebstormProjects/marketlore/logs/auto-update.log
+2025-07-22 21:30:05 [INFO] Git status:
+2025-07-22 21:30:05 [INFO]   M markets.csv
+2025-07-22 21:30:05 [INFO]   ?? backups/
+2025-07-22 21:30:05 [INFO]   ?? logs/
+2025-07-22 21:30:05 [INFO]   ?? scripts/
+2025-07-22 21:30:05 [INFO]   ?? src/predictions/2025-07-22.json
+2025-07-22 21:30:05 [INFO] Recent commits:
+2025-07-22 21:30:05 [INFO]   c227388 anxiety reworked
+2025-07-22 21:30:05 [INFO]   127118f switched to displaying date and prediction
+2025-07-22 21:30:05 [INFO]   7932eb2 story generation working
+2025-07-22 21:30:05 [INFO] Cleaning up old files...
+2025-07-22 21:30:05 [INFO] Cleanup completed
+2025-07-22 21:30:05 [INFO] Auto-update finished
+2025-07-22 21:53:43 [INFO] Starting MarketLore auto-update with action: full
+2025-07-22 21:53:43 [INFO] Checking if server is running...
+2025-07-22 21:53:43 [INFO] Server is running at http://localhost:4000
+2025-07-22 21:53:43 [INFO] Fetching latest market data from Polymarket...
+2025-07-22 21:53:44 [INFO] Successfully fetched market data:        1 lines
+2025-07-22 21:53:44 [INFO] Generating new prediction...
+2025-07-22 21:53:44 [INFO] Successfully generated prediction for 2025-07-22 with anxiety score: 60
+2025-07-22 21:53:44 [INFO] Market data has changed
+2025-07-22 21:53:44 [INFO] Committing and pushing changes...
