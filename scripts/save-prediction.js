@@ -14,12 +14,24 @@ function savePredictionForStaticSite(predictionData) {
             fs.mkdirSync(predictionsDir, { recursive: true });
         }
 
+        // Extract the actual response text from the nested JSON
+        let responseText = predictionData.response;
+        if (typeof responseText === 'string' && responseText.startsWith('{')) {
+            try {
+                const parsedResponse = JSON.parse(responseText);
+                responseText = parsedResponse.response || responseText;
+            } catch (e) {
+                // If parsing fails, use the original text
+                console.log('Could not parse response JSON, using original text');
+            }
+        }
+
         // Save latest prediction
         const latestPath = path.join(predictionsDir, 'latest.json');
         const latestData = {
             anxietyScore: predictionData.anxietyScore,
             date: predictionData.date,
-            response: predictionData.response,
+            response: responseText,
             timestamp: new Date().toISOString(),
             source: 'MarketLore AI'
         };

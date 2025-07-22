@@ -151,33 +151,15 @@
                 if (!latestResp.ok) throw new Error('No response');
                 const data = await latestResp.json();
                 hfResp.classList.remove('buffering');
-                // Parse the response properly - it's stored as a JSON string
-                let responseText = data.response;
-                if (typeof responseText === 'string' && responseText.startsWith('{')) {
-                    try {
-                        const parsedResponse = JSON.parse(responseText);
-                        responseText = parsedResponse.response || responseText;
-                    } catch (e) {
-                        // If parsing fails, use the original text
-                    }
-                }
-                hfResp.innerHTML = responseText
+                // The response is now stored as plain text
+                hfResp.innerHTML = data.response
                     .split(/\n\n+/)
                     .map(par => `<p>${par}</p>`).join('');
             } else {
                 const data = await resp.json();
                 hfResp.classList.remove('buffering');
-                // Parse the response properly - it's stored as a JSON string
-                let responseText = data.response;
-                if (typeof responseText === 'string' && responseText.startsWith('{')) {
-                    try {
-                        const parsedResponse = JSON.parse(responseText);
-                        responseText = parsedResponse.response || responseText;
-                    } catch (e) {
-                        // If parsing fails, use the original text
-                    }
-                }
-                hfResp.innerHTML = responseText
+                // The response is now stored as plain text
+                hfResp.innerHTML = data.response
                     .split(/\n\n+/)
                     .map(par => `<p>${par}</p>`).join('');
             }
