@@ -476,10 +476,8 @@ Make it engaging and story-like, like an essay or an amateur blog post, but with
                 console.log('No anxiety score found in text');
             }
         }
-        // Remove anxiety score and everything after it
-        filtered = filtered.replace(/Anxiety Score: (\d+%)\s*[\s\S]*/i, (match, score) => {
-            return '';
-        });
+        // Remove anxiety score line only (not everything after it)
+        filtered = filtered.replace(/Anxiety Score: \d+(?:%|\/100)?\s*$/i, '');
         // Also remove any stray anxiety score mentions
         filtered = filtered.replace(/Anxiety Score:? ?\d+(?:%|\/100)?/gi, '');
         console.log('Final anxiety score:', anxietyScore);
